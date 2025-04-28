@@ -1,1 +1,29 @@
-<p>navbar-index works!</p>
+<!-- barra de navegación principal -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+        <!-- imagen del título -->
+        <img src="/img/navbar_inicio/titulo.png" class="img-fluid" id="titulo" alt="Let´s Kody">
+
+        <!-- botón para mostrar/ocultar el menú de navegación en dispositivos pequeños -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- contenedor con los enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- enlaces principales de navegación -->
+            <ul class="navbar-nav enlaces">
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-house-fill"></i>&nbsp;Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-question-lg"></i>&nbsp;FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-telephone-fill"></i>&nbsp;Soporte</a></li>
+            </ul>
+
+            <!-- enlace de login alineado a la derecha -->
+            <ul class="navbar-nav ms-auto"> 
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-fill"></i>&nbsp;Acceder</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

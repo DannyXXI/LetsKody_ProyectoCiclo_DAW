@@ -1,0 +1,40 @@
+.navbar { 
+    background-color: #D0E8FF !important;  /* color de fondo del navbar */
+    border-bottom: 2px solid black;        /* grosor y color del borde inferior del navbar */
+    font-family: "badcomic" !important;      /* tipo de letra usada en el navbar */  
+    font-weight: lighter;                    /* grosor de la letra del navbar */
+    font-size: 19pt;                         /* tamaño de la letra en el navbar */
+}
+
+#titulo {
+    width: 25%;  /* ancho de la imagen con el id 'titulo' */
+}
+
+.navbar ul a {
+    color: #333333 !important;  /* color de los enlaces del navbar */
+}
+
+.navbar ul a:hover {
+    color: #2196F3 !important;  /* color de los enlaces del navbar cuando se posa el mouse */
+}
+
+.navbar-toggler {
+    border: 2.5px solid #606060;  /* grosor y color del borde del botón del navbar colapsado */
+}
+
+/* cuando la pantalla tenga un ancho igual o superior a 992px (se deja de colapsar el navbar) */
+@media (width >= 992px) {
+    .enlaces {
+        margin-left: 15px;     /* margen izquierdo para separar enlaces */
+        display: flex;         /* flexbox para alinear horizontalmente */
+        gap: 30px;             /* espacio entre enlaces */
+        align-items: center;   /* centrar verticalmente los enlaces */
+    }
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (el navbar esta colapsado) */
+@media (width < 992px) {
+    #titulo {
+        width: 55%;  /* ancho de la imagen con el id 'titulo' */
+    }
+}
