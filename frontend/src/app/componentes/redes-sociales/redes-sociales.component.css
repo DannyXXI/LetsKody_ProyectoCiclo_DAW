@@ -1,0 +1,87 @@
+.social-container {
+  display: flex;                      /* flexbox para alinear los elementos internos */
+  align-items: center;                /* centrar verticalmente los hijos */
+  justify-content: center;            /* centrar horizontalmente los hijos */
+  flex-wrap: wrap;                    /* permite que el contenido salte de línea si no cabe */
+  height: 130px;                      /* altura fija en pantallas grandes del componente */
+  background-color: #D0E8FF;        /* color de fondo del componente */
+  border-top: 2px solid black;      /* borde superior negro de 2px */
+}
+
+.social-text {
+  font-size: 1.5rem;                       /* tamaño del texto usado en el componente */
+  font-family: "badcomic" !important;      /* tipo de letra usada */
+  font-weight: 500;                        /* negrita para el texto */
+  margin-right: 20px;                      /* separación respecto a los botones del enlace a las redes sociales */
+}
+
+.social-links {
+  display: flex;                     /* flexbox para organizar los botones */
+  align-items: center;               /* alinear verticalmente los íconos */
+  justify-content: center;           /* centrar horizontalmente los botones */
+  flex-wrap: nowrap;                 /* evita que los botones se apilen incluso si hay poco espacio */
+  gap: 20px;                         /* espacio entre botones */
+}
+
+.social-btn {
+  width: 60px;                     /* ancho de los botones de los enlaces a las redes sociales */
+  height: 60px;                    /* alto de los botones de los enlaces a las redes sociales */
+  border-radius: 50%;              /* forma circular de los botones */
+  display: inline-flex;            /* flex-inline para colocar los div para pantallas pequeñas */
+  align-items: center;             /* alineación vertical de los botones */
+  justify-content: center;         /* alineación horizontal de los botones */
+  font-size: 28px;                 /* tamaño del ícono de los botones */                  
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;   /* animaciones suaves al pasar el mouse sobre el boton */
+}
+
+.social-btn:hover {
+  transform: scale(1.2);          /* aumenta de tamaño el botón al pasar el mouse */
+}
+
+/* botón de Facebook y cuando pasas el mouse sobre él */
+.btn-facebook {
+  background-color: #1877f2;
+  color: white;
+}
+.btn-facebook:hover {
+  background-color: #1877f2;
+  color: white;
+}
+
+/* botón de X (Twitter) y cuando pasas el mouse sobre él */
+.btn-x {
+  background-color: #000000;
+  color: white;
+}
+.btn-x:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* botón de Instagram y cuando pasas el mouse sobre él */
+.btn-instagram {
+  background: radial-gradient(circle at 30% 107%,#fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+  border: none;
+}
+.btn-instagram:hover {
+  background: radial-gradient(circle at 30% 107%,#fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+  border: none;
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+  .social-container {
+    flex-direction: column;         /* se coloca el texto encima de los botones */
+    height: auto;                   /* la altura es automática según el contenido */
+    padding-top: 8px;               /* espaciado superior */
+    padding-bottom: 20px;           /* espaciado inferior */
+  }
+
+  .social-text {
+    margin-bottom: 20px;           /* separación debajo del texto */
+    margin-right: 0;               /* se elimina el margen derecho (ya que no es necesario) */
+    text-align: center;            /* se centra el texto horizontal */
+  }
+}
