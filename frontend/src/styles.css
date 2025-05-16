@@ -1,14 +1,19 @@
 /* se agregan las fuentes tipográficas que se usarán en Angular */
 @font-face {
-    font-family: "badcomic"; 
-    src: url("/fonts/badcomic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "badcomic"; 
+  src: url("/fonts/badcomic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "cursecasual"; 
-    src: url("/fonts/cursecasual.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "cursecasual"; 
+  src: url("/fonts/cursecasual.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }

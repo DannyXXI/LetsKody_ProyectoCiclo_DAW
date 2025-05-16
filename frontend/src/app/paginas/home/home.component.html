@@ -1,11 +1,35 @@
-<app-navbar-index></app-navbar-index> <!-- componente de la barra de navegación inicial -->
+<header>
+    <app-navbar-index></app-navbar-index> <!-- componente de la barra de navegación inicial -->
+</header>
 
-<!-- contenedor para el contenido del componente home (imagen y texto)-->
-<div id="contenedor-home">
-    aqui va la informacion del home
-</div>
+<!-- contenedor principal para el contenido de bienvenida -->
+<main id="contenedor-home">
+
+    <!-- sección para la imagen de bienvenida (grupo de Kodys) -->
+    <section class="contenedor-imagen">
+        <img src="/img/navbar_inicio/kodys_grupo.png" alt="Bienvenido">
+    </section>
+
+    <!-- sección para la texto de bienvenida -->
+    <section class="contenedor-texto">
+        <h2><b>¡Bienvenidos a Let’s Kody!</b></h2>
+        <p>¿Preparado para convertir lo que aprendes en clase en una misión épica?</p>
+        <p>
+            En Let’s Kody creemos que aprender va mucho más allá de ir al colegio o al instituto. 
+            Por eso, ofrecemos a todos los estudiantes una forma divertida y práctica de reforzar lo visto en clase, 
+            a través de juegos interactivos que despertarán su curiosidad.
+        </p>
+        <p>
+            Y no estarás solo en esta gran aventura. Te acompañará Kody, un robot profesor del año 3050, 
+            que ha viajado desde el futuro para ayudarte a entender las materias del presente... y, quién sabe, 
+            ¡quizás descubrir también las del futuro!
+        </p>
+        <p>¡Prepárate para aprender, jugar y pasarlo en grande mientras conquistas cada reto con Kody a tu lado!</p>
+    </section>
+
+</main>
 
 <!-- contenedor para el contenido del componente de las redes sociales -->
-<div id="contenedor-rs">
+<footer id="contenedor-rs">
     <app-redes-sociales></app-redes-sociales> <!-- componente de las redes sociales -->
-</div>
+</footer>

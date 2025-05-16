@@ -1,0 +1,60 @@
+main#contenedor-home {
+  display: flex;                      /* flexbox para alinear los elementos internos */
+  align-items: center;                /* centrar verticalmente los hijos */
+  justify-content: center;            /* centrar horizontalmente los hijos */
+  padding: 40px 60px;                 /* espaciado de 40px arriba/abajo y 60px izquierda/derecha */
+  gap: 50px;                          /* espacio entre los elementos internos */
+  flex-wrap: wrap;                    /* permite que el contenido salte de línea si no cabe */
+  background-color: #ffffff;        /* color de fondo del componente */
+}
+
+main#contenedor-home .contenedor-imagen img {
+  max-width: 100%;                  /* limitamos el ancho maximo al 100% del contenedor padre para evitar desbordamiento */
+  height: auto;                     /* mantenemos la proporción de la imagen al ajustar el ancho */
+  width: 685px;                     /* establece un ancho determinado para pantallas grandes */
+}
+
+main#contenedor-home .contenedor-texto {
+  max-width: 600px;                 /* limita el ancho del contenedor de texto para mantener la legibilidad */
+  font-family: "badcomic";          /* tipo de letra usada */
+  font-size: 1.3rem;                /* tamaño de fuente usada */
+  color: #333333;                 /* color del texto */
+  text-align: justify;              /* alinea el texto de manera justificada */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+  main#contenedor-home {
+    padding: 20px;                 /* se reduce el espaciado para adaptarse a pantallas pequeñas */
+    gap: 30px;                     /* se reduce el espacio entre la imagen y texto */
+    flex-direction: column;        /* se cambia el diseño a vertical para mejor adaptación */
+  }
+
+  main#contenedor-home .contenedor-texto {
+    text-align: center;           /* se centra el texto horizontalmente para mejor la apariencia en móviles */
+  }
+}
+
+/* cuando el componente home este pantallas medianas o grandes (desde 992px hasta 2560px) */
+@media (width >= 992px) {
+  main#contenedor-home {
+    min-height: calc(100vh - 120px - 130px);  /* se ajusta la altura mínima del contenedor */
+  }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >=1440px) {
+  main#contenedor-home {
+    padding: 25px 35px;           /* se ajusta el espaciado para mayor espacio visual en pantallas grandes */
+    gap: 65px;                    /* se aumenta el espacio entre la imagen y el texto */
+  }
+
+  main#contenedor-home .contenedor-imagen img {
+    width: 1100px;                /* se aumenta el tamaño de la imagen para aprovechar la alta resolución */
+  }
+
+  main#contenedor-home .contenedor-texto {
+    max-width: 700px;             /* expandimos un poco más el texto */
+    font-size: 19pt;              /* incrementamos el tamaño de la fuente para mejor legibilidad */
+  }
+}
