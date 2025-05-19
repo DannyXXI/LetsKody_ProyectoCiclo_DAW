@@ -1,1 +1,135 @@
-<p>faq works!</p>
+<header>
+    <app-navbar-index></app-navbar-index> <!-- componente de la barra de navegación inicial -->
+</header>
+
+<!-- contenedor principal para el contenido de las preguntas frecuentes -->
+<main id="contenedor-faq">
+
+    <details name="info">
+        <summary>¿Cómo puedo empezar a jugar?</summary>
+        <div class="informacion">
+            <p>Para comenzar a disfrutar de los contenidos de Let’s Kody, debes iniciar sesión con tu usuario y contraseña desde la pestaña "Acceder". Luego, elige la materia que más te interese y ¡empieza a aprender mientras juegas!</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Cómo funcionan los juegos?</summary>
+        <div class="informacion">
+            <p>En Let’s Kody encontrarás dos tipos de juegos:</p>
+            <ol>
+                <li>
+                    <span>JUEGO CON CRONOMETRO</span> 
+                    <ul>
+                        <li>Completa el desafio en el menor tiempo posible para obtener la máxima puntuación.</li>
+                        <li>Al final del desafio se añadiran 10 segundos a tu tiempo final por cada fallo que hallas cometido.</li>
+                    </ul>
+                </li>
+            </ol>
+            <table class="table table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th colspan="2">PUNTUACIÓN SEGÚN TU TIEMPO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>Hasta 2:00</td>
+                        <td>1000 puntos</td>
+                    </tr>
+                    <tr>
+                        <td>Hasta 3:00</td>
+                        <td>600 puntos</td>
+                    </tr>
+                    <tr>
+                        <td>Hasta 4:00</td>
+                        <td>300 puntos</td>
+                    </tr>
+                    <tr>
+                        <td>Hasta 5:00</td>
+                        <td>100 puntos</td>
+                    </tr>
+                    <tr>
+                        <td>5:30</td>
+                        <td>FIN DEL TIEMPO</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ol start="2">
+                <li>
+                    <span>JUEGO DE ACIERTOS Y FALLOS</span>
+                    <ul>
+                        <li>El jugador debe completar 12 preguntas, sin temporizador.</li>
+                        <li>Puedes pasar a la siguiente pregunta si no te la sabes, pero esta valdrá 0 puntos.</li>
+                    </ul>
+                </li>
+            </ol>
+            <table class="table table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th colspan="2">PUNTUACIÓN POR RESPUESTA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Respuesta correcta</td>
+                        <td>100 puntos</td>
+                    </tr>
+                    <tr>
+                        <td>Respuesta fallida</td>
+                        <td>-50 puntos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Puedo jugar sin conexión a Internet?</summary>
+        <div class="informacion">
+            <p>Por ahora, necesitas conexión a Internet para usar Let’s Kody, ya que algunas funciones dependen de ello.</p>
+            <p>¡Estamos trabajando para que en el futuro puedas jugar sin conexión! Síguenos en redes sociales para estar al tanto de futuras novedades.</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Qué contenido está disponible en Let’s Kody?</summary>
+        <div class="informacion">
+            <p>Actualmente ofrecemos contenidos de primaria (Matemáticas y Lengua Castellana) y secundaria (Química y Geografía), pero en futuras actualizaciones llegarán nuevas materias.</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Let’s Kody es seguro para niños?</summary>
+        <div class="informacion">
+            <p>¡Sí! Nos tomamos muy en serio la seguridad de los niños y adolescentes. Toda la experiencia está diseñada para que puedan aprender y jugar de forma segura y divertida.</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Puedo enviar sugerencias para mejorar la aplicación?</summary>
+        <div class="informacion">
+            <p>¡Por supuesto! En Let’s Kody valoramos mucho tus ideas. Puedes enviarlas desde el formulario de contacto a nuestro soporte técnico indicando tu idea y una breve descripción de ella; cuando nuestros especialistas la hallan valorado, Kody te mandará un email contandote nuestra decisión.</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿Mis datos personales se comparten con terceros?</summary>
+        <div class="informacion">
+            <p>No. Todos los datos personales de los usuarios están cifrados y protegidos en nuestros servidores. No compartiremos tu información con terceros a menos que el usuario lo permita.</p>
+        </div>
+    </details>
+    
+    <details name="info">
+        <summary>¿La aplicación recibirá actualizaciones?</summary>
+        <div class="informacion">
+            <p>Sí. El equipo de Let’s Kody trabaja constantemente para añadir nuevos juegos, mejorar los existentes y ofrecerte la mejor experiencia posible a nuestros usuarios.</p>
+            <p>Siguenos en nuestras redes sociales para no perderte de ninguna actualización.</p>
+        </div>
+    </details>
+
+</main>
+
+<!-- contenedor para el contenido del componente de las redes sociales -->
+<footer id="contenedor-rs">
+    <app-redes-sociales></app-redes-sociales> <!-- componente de las redes sociales -->
+</footer>

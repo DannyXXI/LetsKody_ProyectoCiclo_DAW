@@ -1,0 +1,76 @@
+main#contenedor-faq {
+    min-height: calc(100vh - 120px - 130px);   /* se ajusta la altura mínima del contenedor */
+    padding: 30px;                             /* espaciado del contenedor */
+    font-family: "badcomic";                   /* tipo de letra usada */
+}
+
+main#contenedor-faq details {
+    border: 3px solid blue;          /* color y grosor del borde */
+    background-color: lightblue;     /* color del fondo */
+    border-radius: 10px;               /* radio de curvatura del borde en las esquinas */
+}
+
+main#contenedor-faq details:not(:last-of-type){
+    margin-bottom: 25px;      /* aplica a todos los details un margen inferior de 25px excepto el último */
+}
+
+main#contenedor-faq details[open] {
+    border-color: rgb(204, 31, 243);    /* cambia el color del borde del details cuando esta abierto */
+}
+
+main#contenedor-faq details[open] summary {
+    border-bottom: 3px solid rgb(204, 31, 243);    /* agrega un borde inferior morado al summary cuando el details esta abierto */
+}
+
+main#contenedor-faq details summary {
+    list-style: none;          /* se elimina el icono del estilo de lista */
+    cursor: pointer;           /* estilo del cursor cuando el mouse sobre el summary del details*/
+    padding: 10px;             /* espaciado del summary */
+    text-align: center;        /* se centra el texto horizontalmente */
+    font-weight: bold;         /* se aplica negrita al texto */
+}
+
+main#contenedor-faq details:not([open]):hover{
+    border-color: rgb(204, 31, 243);   /* cuando se pasa el mouse por el details se cambia el color del borde cuando no esta abierto */
+}
+
+main#contenedor-faq details .informacion {
+    padding: 10px 10px 0 10px;   /* espaciado de 10px por todos lados excepto abajo */
+}
+
+main#contenedor-faq details .informacion ol, main#contenedor-faq details .informacion ul{
+    margin-left: 20px;     /* margen izquierdo de 20px */
+    padding-left: 20px;    /* espaciado de 20px al lado izquierdo */
+}
+
+main#contenedor-faq details .informacion ol li span{
+    font-weight: 600;    /* se aplica negrita al texto del span */
+}
+
+main#contenedor-faq details .informacion ol li ul{
+    margin-top: 5px;     /* margen superior de 5px */
+}
+
+main#contenedor-faq details .informacion ol li ul li:not(:last-of-type){
+    margin-bottom: 5px;  /* margen inferior de 5px a todos los li de los ul dentro de los ol, excepto el ultimo ul */
+}
+
+main#contenedor-faq details .informacion table{
+    width: 30%;                               /* establece el ancho de la tabla al 30% del contenedor padre */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);   /* se aplica una sombra sutil alrededor de la tabla para darle profundidad visual */
+    margin: auto;                             /* centra horizontalmente la tabla dentro de su contenedor */
+    border-radius: 10px;                      /* redondea las esquinas de la tabla con un radio de 10px */
+    overflow: hidden;                         /* oculta el contenido que sobresalga de los bordes redondeados */
+    margin-bottom: 12px;                      /* margen inferior de 12px para separar la tabla de otros elementos por debajo */
+}
+
+main#contenedor-faq details p {
+    text-align: justify;            /* se centra el texto justificadamente */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    main#contenedor-faq details .informacion table{
+        width: auto;               /* establece el ancho de la tabla a automatico en moviles */
+    }
+}
