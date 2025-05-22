@@ -1,0 +1,155 @@
+main#contenedor-soporte {
+  display: flex;                               /* flexbox para alinear los elementos internos */
+  flex-wrap: wrap;                             /* permite que el contenido salte de línea si no cabe */
+  justify-content: center;                     /* centrar horizontalmente los hijos */
+  align-items: stretch;                        /* hace que los elementos hijos tengan igual altura */
+  gap: 40px;                                   /* espacio entre los elementos internos */
+  padding: 20px;                               /* espaciado de 20px del contenedor */
+  background-color: #ffffff;                 /* color de fondo del componente */
+  min-height: calc(100vh - 100px - 120px);     /* se ajusta la altura mínima del contenedor */
+}
+
+main#contenedor-soporte .contenedor-formulario {
+  width: 600px;                           /* ancho del contenedor del formulario en pantallas normales */
+  font-family: "badcomic";                /* tipo de letra usada */
+  padding: 10px;                          /* espaciado de 10px del contenedor */
+  border: 2px solid black;              /* color y grosor del borde */
+  border-radius: 15px;                    /* redondeo de los bordes */
+  background-color: lightblue;          /* color de fondo del formulario */
+  display: flex;                          /* flexbox para alinear los elementos internos */
+  flex-direction: column;                 /* los elementos hijos se acomodan verticalmente */
+}
+
+main#contenedor-soporte .contenedor-contacto {
+  width: 600px;                           /* ancho del contenedor de contacto en pantallas normales */
+  font-family: "badcomic";                /* tipo de letra usada */
+  padding: 10px;                          /* espaciado de 10px del contenedor */
+  border: 2px solid black;              /* color y grosor del borde */
+  border-radius: 15px;                    /* redondeo de los bordes */
+  background-color: lightgreen;         /* color de fondo del contenedor de contacto */
+  display: flex;                          /* flexbox para alinear los elementos internos */
+  flex-direction: column;                 /* los elementos hijos se acomodan verticalmente */
+  justify-content: space-between;         /* para dejar espacio entre texto y la imagen */
+}
+
+main#contenedor-soporte .contenedor-formulario h3, main#contenedor-soporte .contenedor-contacto h3 {
+  margin: 6px 0 20px 0;     /* margen de 6px hacia arriba y 20px hacia abajo */
+  text-align: center;       /* se centra horizontalmente el texto del titulo de cada contenedor */
+  font-size: 1.8rem;        /* tamaño de la letra del titulo */
+  font-weight: bold;        /* negrita para el texto */
+}
+
+main#contenedor-soporte .contenedor-formulario form {
+  display: flex;               /* flexbox para alinear los elementos internos */
+  flex-direction: column;      /* los elementos hijos se acomodan verticalmente */
+  flex-grow: 1;                /* hace que el formulario ocupe todo el espacio disponible */
+  gap: 15px;                   /* espacio entre los elementos internos */
+}
+
+/* se aplica a toda la clase 'input-group' excepto a los elementos con el id 'email' */
+main#contenedor-soporte .contenedor-formulario .input-group:not(:has(#email)) {
+  flex-grow: 1;              /* permite que el grupo de los inputs crezca */
+  display: flex;             /* flexbox para alinear los elementos internos */
+  flex-direction: column;    /* los elementos hijos se acomodan verticalmente */
+}
+
+main#contenedor-soporte .contenedor-formulario .form-control {
+  font-family: "badcomic";      /* tipo de letra usada */
+  font-size: 1rem;              /* tamaño de la letra de los controles del formulario */
+  border-radius: 6px;           /* redondeo de los bordes */
+  border: 1px solid #cccc;    /* color y grosor del borde */
+}
+
+main#contenedor-soporte .contenedor-formulario #email {
+  width: auto;    /* se asegura que ocupe todo el ancho el input del email */
+}
+
+main#contenedor-soporte .contenedor-formulario #mensaje {
+  resize: none;         /* el textarea no se puede reajustar su tamaño */
+  flex-grow: 1;         /* ocupa todo el espacio disponible */
+  min-height: 100px;    /* altura mínima (necesario aunque no se alcance) */
+  width: 100%;          /* se asegura que ocupe todo el ancho el textarea */
+}
+
+main#contenedor-soporte .contenedor-formulario .g-recaptcha {
+  margin-bottom: 15px;          /* margen inferior de 15px para el contenedor del reCAPTCHA */
+  display: flex;                /* flexbox para alinear el contenedor */
+  justify-content: center;      /* centrar horizontalmente el contenedor */
+}
+
+main#contenedor-soporte .contenedor-formulario .btn {
+  display: block;                  /* hace que el botón ocupe toda la línea disponible */
+  width: 30%;                      /* el botón ocupa el 30% del ancho de su contenedor padre */
+  padding: 10px;                   /* espaciado de 10px del interior del boton */
+  font-size: 1rem;                 /* tamaño de la letra del boton de envio del formulario */
+  font-weight: bold;               /* negrita para el texto */
+  font-family: "badcomic";         /* tipo de letra usada */
+  border-radius: 10px;             /* redondeo de los bordes */
+  margin: 0 auto 6px;              /* centro el boton horizontalmente y le doy un margen inferior de 6px */
+  background-color: yellow;      /* color de fondo del boton */
+  border: 0px;                     /* quitamos el borde del boton */
+  transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;   /* animaciones suaves al pasar el mouse sobre el boton */
+}
+
+main#contenedor-soporte .contenedor-formulario .btn:hover {
+  background-color: rgb(231, 231, 0);      /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+main#contenedor-soporte .contenedor-contacto .informacion {
+  font-size: 1.2rem;     /* tamaño de letra para el boton */
+}
+
+.contenedor-contacto img {
+  max-width: 50%;         /* ancho de las imagenes en el contenedor padre */
+  height: auto;           /* la altura se automaticamente para mantener la proporcion original de la imagen */
+  object-fit: contain;    /* permite que la imagen se escale para encajar dentro del contenedor sin deformarse ni recortarse */
+  align-self: center;     /* centra la imagen si no ocupa todo el ancho */
+  max-height: 100%;       /* limita la altura para que no se desborde */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+  main#contenedor-soporte {
+    flex-direction: column; /* los elementos hijos se acomodan verticalmente */
+    gap: 30px;              /* reducimos el espacio entre los elementos hijos */
+  }
+
+  main#contenedor-soporte .contenedor-formulario, main#contenedor-soporte .contenedor-contacto {
+    width: auto;   /* el ancho de los contenedores se adapata al ancho disponible */
+  }
+
+  main#contenedor-soporte .contenedor-formulario h3, main#contenedor-soporte .contenedor-contacto h3 {
+    font-size: 1.6rem;   /* se ajusta el tamaño de letra del titulo */
+  }
+
+  .contenedor-contacto img {
+    width: 80%;      /* se ajusta la imagen a un ancho del 80% */
+    height: auto;    /* la altura se automaticamente para mantener la proporcion original de la imagen */
+  }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+  main#contenedor-soporte {
+    gap: 60px;            /* aumentamos el espacio entre los elementos hijos */
+    padding: 110px 40px;  /* espaciado del contenedor de 110px hacia arriba/abajo y 40px hacia derecha/izquierda */
+    align-items: center;  /* se centra verticalmente los hijos */
+  }
+
+  main#contenedor-soporte .contenedor-formulario, main#contenedor-soporte .contenedor-contacto {
+    width: 800px;   /* el ancho de los contenedores es establece a 800px */
+    height: 46vh;   /* la altura de los cotenedores se establece al 46% de la altura de la pantalla */
+  }
+
+  main#contenedor-soporte .contenedor-formulario h3, main#contenedor-soporte .contenedor-contacto h3 {
+    font-size: 2.2rem;  /* se ajusta el tamaño de letra del titulo */
+  }
+
+  main#contenedor-soporte .contenedor-contacto .informacion {
+    font-size: 1.7rem;   /* se ajusta el tamaño del texto de la información de contacto */
+  }
+
+  .contenedor-contacto img {
+    max-width: 60%;     /* se ajusta el tamaño maximo de la imagen */
+  }
+}

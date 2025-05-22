@@ -1,1 +1,38 @@
-<p>soporte works!</p>
+<header>
+    <app-navbar-index></app-navbar-index> <!-- componente de la barra de navegación inicial -->
+</header>
+
+<!-- contenedor principal para el contenido de bienvenida -->
+<main id="contenedor-soporte">
+
+<section class="contenedor-formulario">
+    <h3>📧 ENVIENOS SU DUDA 📧</h3>
+    <form>
+      <div class="input-group">
+        <input type="email" class="form-control" id="email" placeholder="Escribe tu email..." required />
+      </div>
+      <div class="input-group">
+        <textarea class="form-control" id="mensaje" placeholder="Explícanos la duda o sugerencia que tienes..." required></textarea>
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LcglLEqAAAAAD0YgAyJOBgxECX1tvPVD5jgQzDt"></div>   
+      <button type="submit" class="btn btn-info">Enviar</button>
+    </form>
+  </section>
+
+  <section class="contenedor-contacto">
+    <h3>📞 ATENCIÓN TELEFÓNICA 📞</h3>
+    <div class="informacion">
+      <p><b>Teléfono:</b> 983 123 456</p>    
+      <p><b>Horario:</b> Lunes a Viernes, 9:00 - 18:00</p>
+    </div>
+    <img src="/img/tipos_kody/kody_soporte.png" alt="Kody teleoperador">
+  </section>
+
+</main>
+
+<!-- contenedor para el contenido del componente de las redes sociales -->
+<footer id="contenedor-rs">
+    <app-redes-sociales></app-redes-sociales> <!-- componente de las redes sociales -->
+</footer>
+
+
