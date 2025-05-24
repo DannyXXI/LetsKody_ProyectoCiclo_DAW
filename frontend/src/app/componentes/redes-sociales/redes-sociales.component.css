@@ -80,8 +80,26 @@
   }
 
   .social-text {
+    font-size: 1.35rem;            /* se reduce el tamaño del texto usado en el componente */
     margin-bottom: 20px;           /* separación debajo del texto */
     margin-right: 0;               /* se elimina el margen derecho (ya que no es necesario) */
     text-align: center;            /* se centra el texto horizontal */
+  }
+}
+
+/* cuando el componente este en pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+  .social-text {
+    font-size: 2rem;           /* se aumenta el tamaño del texto usado en el componente */
+  }
+
+  .social-links {
+    gap: 30px;                 /* se aumenta el espacio entre botones */
+  }
+
+  .social-btn {
+    width: 70px;               /* se aumenta el ancho de los botones de los enlaces a las redes sociales */
+    height: 70px;              /* se aumenta el alto de los botones de los enlaces a las redes sociales */
+    font-size: 38px;           /* se aumenta el tamaño del ícono de los botones */                  
   }
 }

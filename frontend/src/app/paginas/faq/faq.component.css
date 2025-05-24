@@ -59,9 +59,33 @@ main#contenedor-faq details .informacion table{
     width: 30%;                               /* establece el ancho de la tabla al 30% del contenedor padre */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);   /* se aplica una sombra sutil alrededor de la tabla para darle profundidad visual */
     margin: auto;                             /* centra horizontalmente la tabla dentro de su contenedor */
+    border: 1px solid black;                /* se aplica un borde negro de 1px a la tabla */
     border-radius: 10px;                      /* redondea las esquinas de la tabla con un radio de 10px */
     overflow: hidden;                         /* oculta el contenido que sobresalga de los bordes redondeados */
     margin-bottom: 12px;                      /* margen inferior de 12px para separar la tabla de otros elementos por debajo */
+    border-collapse: separate;                /* para que el color del borde funcione bien con bordes redondeados */
+    border-spacing: 0;                        /* elimina espacios entre celdas (generados por el separate) */
+}
+
+/* color de fondo para cada celda de las tablas según su clase */
+main#contenedor-faq details .informacion table tbody .primero{
+    background-color: gold;
+}
+main#contenedor-faq details .informacion table tbody .segundo{
+    background-color: silver;
+}
+main#contenedor-faq details .informacion table tbody .tercero{
+    background-color: #b87333;
+}
+main#contenedor-faq details .informacion table tbody .cuarto{
+    background-color: rgb(228, 157, 253);
+}
+main#contenedor-faq details .informacion table tbody .correct{
+    background-color: greenyellow;
+}
+main#contenedor-faq details .informacion table tbody .bad{
+    background-color: rgb(255, 83, 83);
+    border-bottom: 0px;       /* elimina el borde inferior en las últimas filas */
 }
 
 main#contenedor-faq details p {

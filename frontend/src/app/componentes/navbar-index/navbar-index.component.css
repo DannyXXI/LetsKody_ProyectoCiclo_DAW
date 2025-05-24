@@ -38,3 +38,10 @@
         width: 55%;  /* ancho de la imagen con el id 'titulo' */
     }
 }
+
+/* cuando el componente este en pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+  .navbar {
+    font-size: 30pt;        /* se aumenta el tamaño de la letra en el navbar */
+  }
+}
