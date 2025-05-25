@@ -1,1 +1,38 @@
-<p>login works!</p>
+<header>
+    <app-navbar-index></app-navbar-index> <!-- componente de la barra de navegación inicial -->
+</header>
+
+<!-- contenedor principal para el contenido del componente soporte -->
+<main id="contenedor-login">
+
+    <section class="contenedor-formulario">
+        <h3>👋 BIENVENID&#64; 👋</h3>
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" id="user" placeholder="Introduce tu usuario..." required/>
+            </div>
+            <div class="input-group">
+                <input type="password" class="form-control" id="pass" placeholder="Introduce tu contraseña..." required/>
+            </div>
+            <div class="enlace-ingreso">
+                <p>¿Eres nuevo? Haz click <a href="#">aquí</a> para registrarte.</p>
+            </div>
+            <button type="button" class="btn btn-info" (click)="abrirModal()">Enviar</button> <!-- boton de envio del formulario -->
+        </form>
+    </section>
+</main>
+
+<!-- contenedor para el contenido del componente de las redes sociales -->
+<footer id="contenedor-rs">
+    <app-redes-sociales></app-redes-sociales> <!-- componente de las redes sociales -->
+</footer>
+
+<!-- modal para mostrar los mensajes de error cuando se quiera hacer login -->
+<dialog id="modalError">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p>{{mensajeError}}</p>
+        <button type="submit" class="btn btn-dark">CERRAR</button> <!-- boton para cerrar el modal -->
+    </form>
+</dialog>
