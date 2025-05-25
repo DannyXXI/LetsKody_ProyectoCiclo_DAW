@@ -1,0 +1,100 @@
+/* se agrega una fuente personaliza para la vista del servidor */
+@font-face {
+    font-family: "badcomic";
+    src: url("badcomic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* estilo para todos los elementos HTML (selector universal) */
+* {
+    margin: 0;               /* se elimina el margen por defecto */
+    padding: 0;              /* se elimina el espaciado por defecto */
+    box-sizing: border-box;  /* se asegura que el ancho y alto sean más precisos */
+}
+
+body {
+    background: #121212;       /* color de fondo para el cuerpo de la página */
+    font-family: "badcomic";     /* tipo de letra usada */
+    color: #eee;               /* color de texto para el cuerpo de la página */
+    display: flex;               /* flexbox para alinear los elementos internos */
+    justify-content: center;     /* centrar horizontalmente los hijos */
+    align-items: center;         /* centrar verticalmente los hijos */
+    min-height: 100vh;           /* altura mínima (la pantalla completa) */
+    padding: 10px;               /* espaciado para evitar bordes pegados */
+}
+
+#contenedor-home {
+    background: #1e1e1e;       /* color de fondo para contenedor principal */
+    padding: 40px 50px;          /* espaciado de 40px arriba/abajo y 60px izquierda/derecha */
+    border-radius: 18px;         /* redondeo de los bordes */
+    width: 100%;                 /* ocupa todo el ancho disponible */
+    max-width: 80vw;             /* ancho máximo del 80% del ancho de la pantalla */
+    text-align: center;          /* se centra horizontalmente contenido del contenedor */
+    animation: pulso-brillante 3s infinite ease-in-out;      /* animación de resplandor */
+    transition: all 0.3s ease;   /* transicion suave en cualquier cambio */
+}
+
+/* animación de resplandor pulsante */
+@keyframes pulso-brillante {
+    0%, 100% {
+        box-shadow: 0 0 28px #0d8de0;
+    }
+    50% {
+        box-shadow: 0 0 60px #06a6f7;
+    }
+}
+
+#contenedor-home h2 {
+    font-size: 3.5rem;                   /* tamaño de fuente usada */
+    color: #06a6f7;                    /* color del titulo */
+    margin-bottom: 25px;                 /* margen inferior de 25px */
+    text-shadow: 0 0 10px #06a6f7;     /* resplandor azul suave alrededor del texto */
+}
+
+#contenedor-home img {
+    width: 30%;           /* ancho de la imagen */
+    height: auto;         /* la altura se automaticamente para mantener la proporcion original de la imagen */
+}
+
+#contenedor-home p {
+    width: 100%;           /* el parrafo ocupa todo el ancho del contenedor */
+    font-size: 1.5rem;     /* tamaño de la fuente del texto */
+    line-height: 1.2lh;    /* altura entre líneas */
+    color: #ccc;         /* color del texto del parrafo */
+    margin: 0 auto;        /* centrado horizontal automático */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    #contenedor-home {
+        padding: 25px 20px;    /* se reduce el espaciado del contenedor principal */
+    }
+
+    #contenedor-home h2 {
+        font-size: 1rem;       /* se reduce el tamaño del título */
+    }
+
+    #contenedor-home img {
+        width: 42%;            /* se aumenta el tamaño de la imagen */
+    }
+
+    #contenedor-home p {
+        font-size: 1rem;       /* se reduce el tamaño del texto del parrafo */
+    }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >=1440px) {
+    #contenedor-home {
+        width: 80%;              /* se reduce el anco que abarca el contenedor principal */
+    }
+    
+    #contenedor-home h2 {
+        font-size: 5.2rem;       /* se aumenta el tamaño del título */
+    }
+
+    #contenedor-home p {
+        font-size: 2.5rem;       /* se aumenta el tamaño del texto del parrafo */
+    }
+}
