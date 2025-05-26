@@ -107,6 +107,37 @@ main#contenedor-soporte .contenedor-contacto .informacion {
   max-height: 100%;       /* limita la altura para que no se desborde */
 }
 
+#modal[open]{ 
+  scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
+  transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
+
+  @starting-style {
+    scale: 0;                          /* estado inicial del modal antes de hacerse visible */
+  }
+}
+
+#modal {
+  border-radius: 18px;                   /* redondeo de los bordes */
+  text-align: center;                    /* se centra horizontalmente el contenido del modal */
+  font-family: "badcomic";               /* tipo de letra usada en el modal */
+  scale: 0;                              /* estado inicial del modal (se usa con 'transition') */
+  transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
+}
+
+.modalError {
+  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
+  border-color: rgb(255, 37, 37);        /* color del borde del modal */
+}
+
+.modalCorrect {
+  background-color: rgb(126, 255, 122);  /* color de fondo del modal */
+  border-color: rgb(33, 189, 27);        /* color del borde del modal */
+}
+
+.p-modal {
+  white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
+}
+
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
 @media (width < 992px) {
   main#contenedor-soporte {

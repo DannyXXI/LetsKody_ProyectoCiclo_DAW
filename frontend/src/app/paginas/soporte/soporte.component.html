@@ -8,14 +8,14 @@
   <!-- sección del formulario de contacto -->
   <section class="contenedor-formulario">
     <h3>📧 ENVÍENOS SU DUDA 📧</h3>
-    <form>
+    <form [formGroup]="formularioSoporte" (submit)="enviarEmailSoporte($event)">
       <div class="input-group">
-        <input type="email" class="form-control" id="email" placeholder="Escribe tu email..." required/> <!-- campo de email -->
+        <input type="email" class="form-control" id="email" placeholder="Escribe tu email..." formControlName="destinatario" required/> <!-- campo de email -->
       </div>
       <div class="input-group">
-        <textarea class="form-control" id="mensaje" placeholder="Explícanos la duda o sugerencia que tienes..." required></textarea> <!-- campo de contenido del mensaje -->
+        <textarea class="form-control" id="mensaje" placeholder="Explícanos la duda o sugerencia que tienes..." formControlName="contenido" required></textarea> <!-- campo de contenido del mensaje -->
       </div>
-      <div class="g-recaptcha" data-sitekey="6LcglLEqAAAAAD0YgAyJOBgxECX1tvPVD5jgQzDt"></div> <!-- contenedor para el reCAPTCHA -->
+      <div class="g-recaptcha"></div> <!-- contenedor para el reCAPTCHA -->
       <button type="submit" class="btn btn-info">Enviar</button>
     </form>
   </section>
@@ -36,3 +36,13 @@
 <footer id="contenedor-rs">
   <app-redes-sociales></app-redes-sociales> <!-- componente de las redes sociales -->
 </footer>
+
+<!-- modal para mostrar los mensajes de error cuando se envia el email -->
+<dialog id="modal">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <button type="submit" class="btn btn-dark">CERRAR</button> <!-- boton para cerrar el modal -->
+    </form>
+</dialog>

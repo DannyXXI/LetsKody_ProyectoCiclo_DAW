@@ -67,11 +67,11 @@ main#contenedor-login .contenedor-formulario .btn:hover {
 }
 
 #modalError {
-    background-color: rgb(255, 122, 122);  /* color de fondo del modal */
-    border-color: rgb(255, 37, 37);        /* color del borde del modal */
-    border-radius: 18px;                     /* redondeo de los bordes */
-    text-align: center;                      /* se centra horizontalmente el contenido del modal */
-    font-family: "badcomic";                 /* tipo de letra usada en el modal */
+  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
+  border-color: rgb(255, 37, 37);        /* color del borde del modal */
+  border-radius: 18px;                     /* redondeo de los bordes */
+  text-align: center;                      /* se centra horizontalmente el contenido del modal */
+  font-family: "badcomic";                 /* tipo de letra usada en el modal */
 }
 
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
