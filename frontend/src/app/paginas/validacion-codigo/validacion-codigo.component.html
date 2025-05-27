@@ -1,0 +1,33 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-validacion">
+
+    <!-- contenedor para el formulario de validación de codigo por email -->
+    <section class="validacion-codigo">
+
+        <h2>🔑 CÓDIGO DE VERIFICACIÓN 🔑</h2>
+
+        <div class="texto-informacion">
+            <p>
+                Por motivos de seguridad, se requiere 
+                que introduzca un código de seguridad que le ha 
+                sido mandado a su email (<b>{{emailUsuario}}</b>) para finalizar el proceso.
+            </p>
+            <p>
+                Si no logra encontrar el mensaje en la bandeja de recibidos, pruebe a mirar por si acaso su servicio de correo 
+                electrónico le ha mandado el mensaje a la bandeja de "correo no deseado".
+            </p>
+        </div>
+
+        <div class="formulario-validacion">
+            <form (submit)="comprobarCodigo($event)">
+                <div class="input-group">
+                    <input type="text" name="code" [(ngModel)]="codigoVerificacion" (input)="caracteresValidos($event)" minlength="8" maxlength="8" placeholder="Introduce el código..." required/>
+                </div>
+                <div class="botones">
+                    <button type="button" routerLink="/registro" class="btn btn-danger">Volver al home</button>
+                    <button type="submit" class="btn btn-primary">Verificar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>

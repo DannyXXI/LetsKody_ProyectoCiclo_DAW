@@ -27,7 +27,7 @@ main#contenedor-registro .formulario-registro a {
 
 main#contenedor-registro .formulario-registro h2 {
   margin-bottom: 22px;         /* margen inferior */
-  text-align: center;          /* se centra horizontalmente el texto del contenedor del enlace */
+  text-align: center;          /* se centra horizontalmente el texto del titulo */
   font-size: 2.3rem;           /* tamaño de la letra del titulo del formulario */
   font-weight: bold;           /* negrita para el texto */
 }
