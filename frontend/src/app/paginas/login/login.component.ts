@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NavbarIndexComponent } from '../../componentes/navbar-index/navbar-index.component';
 import { RedesSocialesComponent } from '../../componentes/redes-sociales/redes-sociales.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [NavbarIndexComponent, RedesSocialesComponent],
+  imports: [NavbarIndexComponent, RedesSocialesComponent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
