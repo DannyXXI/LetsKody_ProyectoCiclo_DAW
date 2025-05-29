@@ -13,7 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // evitamos el uso del token CSRF para el POST, PUT y DELETE
         $middleware->validateCsrfTokens(except: [
-            "email/*"
+            "email/*",
+            "recaptcha",
+            "usuario/*"
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

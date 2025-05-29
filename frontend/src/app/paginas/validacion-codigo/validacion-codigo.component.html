@@ -24,10 +24,43 @@
                     <input type="text" name="code" [(ngModel)]="codigoVerificacion" (input)="caracteresValidos($event)" minlength="8" maxlength="8" placeholder="Introduce el código..." required/>
                 </div>
                 <div class="botones">
-                    <button type="button" routerLink="/registro" class="btn btn-danger">Volver al home</button>
-                    <button type="submit" class="btn btn-primary">Verificar</button>
+                    <button type="button" (click)="volver()" class="btn btn-danger">Volver a atrás</button>
+                    <button type="submit" [disabled]="codigoVerificacion.length < 8" class="btn btn-primary">Verificar</button>
                 </div>
             </form>
         </div>
     </section>
 </main>
+
+<!-- modal para indicar si el usuario quiere volver a atrás -->
+<dialog id="modalDosBotones">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">Cerrar modal</button>
+            <button type="submit" (click)="volverAtras()" class="btn btn-dark">Volver a atrás</button> <!-- boton para cerrar el modal -->
+        </div>
+    </form>
+</dialog>
+
+<!-- modal para indicar el exito del registro -->
+<dialog id="modalUnBoton">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <button type="submit" (click)="this.router.navigate(['/login']);" class="btn btn-dark">Volver al login</button>
+    </form>
+</dialog>
+
+<!-- modal para indicar algun error -->
+<dialog id="modalError">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <button type="submit" class="btn btn-dark">CERRAR</button>
+    </form>
+</dialog>
