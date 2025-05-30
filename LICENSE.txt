@@ -1,0 +1,46 @@
+# LICENCIA DE USO – Let’s Kody
+
+© 2025 Daniel Requejo Expósito. Todos los derechos reservados.
+
+Esta aplicación web educativa, desarrollada bajo el nombre “Let’s Kody”, y todo su código fuente están protegidos por derechos de autor.
+
+Se permite:
+
+- El uso gratuito de esta aplicación con fines educativos y no comerciales.
+- La distribución de la aplicación siempre que se mantenga íntegra y sin modificaciones.
+- El acceso libre a su interfaz y funcionalidades para su evaluación o uso en entornos educativos.
+
+No se permite:
+
+- La modificación del código fuente sin el consentimiento expreso y por escrito del autor.
+- La redistribución de versiones modificadas o derivadas.
+- El uso comercial sin autorización previa.
+
+Para solicitar permisos especiales de uso o adaptación, contacte con el autor a través del siguiente correo electrónico: [daniel.reqexp@gmail.com].
+
+## DESCARGO DE RESPONSABILIDAD:
+
+Este software se proporciona “tal cual”, sin garantías de ningún tipo, ya sean expresas o implícitas, incluyendo, pero no limitándose a, garantías de comerciabilidad o idoneidad para un propósito particular. El uso de esta aplicación es responsabilidad exclusiva del usuario.
+
+## RECURSOS DE TERCEROS:
+
+Este software utiliza herramientas, fuentes y recursos de terceros cuyas licencias y derechos corresponden a sus respectivos autores:
+
+### Tecnologías:
+- Angular (MIT)
+- Laravel (MIT)
+- Bootstrap (MIT)
+- Node.js y npm (MIT)
+- Composer (MIT)
+- PHP (Licencia PHP)
+- Google reCAPTCHA (uso sujeto a https://www.google.com/recaptcha/about/)
+- FontAwesome Free (CC BY 4.0)
+
+### Fuentes:
+- Bad Comic (SIL Open Font License 1.1)
+- Curse Casual JVE (uso personal gratuito; uso comercial requiere permiso del autor)
+
+### Diseños gráficos:
+- Las imágenes, logotipos e ilustraciones han sido diseñados por el autor. No se permite su uso sin autorización.
+
+FIN DE LA LICENCIA.
