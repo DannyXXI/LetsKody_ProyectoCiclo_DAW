@@ -1,0 +1,80 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-menu-usuario">
+
+    <section class="menu-usuario">
+
+        <!-- sección de la parte superior (titulo de bienvenida y botones) -->
+        <section class="parte-superior">
+            <h2>Bienvenido, usuario</h2>
+            <div class="botones">
+                <button class="btn btn-secondary"><i class="fas fa-cog"></i>&nbsp;Ajustes</button>     <!-- boton de ir a modificar tus datos -->
+                <button class="btn btn-danger" (click)="mostrarModalCerrar()"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</button> <!-- boton para cerrar sesión -->
+            </div>
+        </section>
+
+        <!-- sección de la parte inferior (carrusel con las asignaturas) -->
+        <section class="parte-inferior">
+            <div id="carrusel-materias" class="carousel slide">
+                <div class="carousel-inner">
+
+                    <!-- panel de geografia -->
+                    <div class="carousel-item active">
+                        <div class="contenido-carrusel geografia">
+                            <img src="img/tipos_kody/kody_geografia.png" alt="Kody geografo">
+                            <h5 class="mt-3">GEOGRAFÍA</h5>
+                        </div>
+                    </div>
+
+                    <!-- panel de lengua castellana -->
+                    <div class="carousel-item">
+                        <div class="contenido-carrusel lengua">
+                            <img src="img/tipos_kody/kody_lengua.png" alt="Kody de lenguas">
+                            <h5 class="mt-3">LENGUA CASTELLANA</h5>
+                        </div>
+                    </div>
+
+                    <!-- panel de matematicas -->
+                    <div class="carousel-item">
+                        <div class="contenido-carrusel matematicas">
+                            <img src="img/tipos_kody/kody_mates.png" alt="Kody matematico">
+                            <h5 class="mt-3">MATEMÁTICAS</h5>
+                        </div>
+                    </div>
+
+                    <!-- panel de quimica -->
+                    <div class="carousel-item">
+                        <div class="contenido-carrusel quimica">
+                            <img src="img/tipos_kody/kody_quimica.png" alt="Kody quimico">
+                            <h5 class="mt-3">QUÍMICA</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- boton de anterior del carrusel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-materias" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <!-- boton de siguiente del carrusel -->
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel-materias" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+    
+    </section>
+</main>
+
+<!-- modal para indicar si el usuario quiere cerrar sesion -->
+<dialog id="modal">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p class="p-modal">¿Desea cerrar la sesión?</p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">NO</button>
+            <button type="submit" (click)="cerrarSesion()" class="btn btn-dark">SI</button> <!-- boton para cerrar el modal -->
+        </div>
+    </form>
+</dialog>
+    
