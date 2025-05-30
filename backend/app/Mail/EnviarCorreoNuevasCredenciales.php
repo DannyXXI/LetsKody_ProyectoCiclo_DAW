@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 use Illuminate\Mail\Mailables\Address;  // se importa esta clase para representar direcciones email
 
-class EnviarCorreoCredenciales extends Mailable
+class EnviarCorreoNuevasCredenciales extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class EnviarCorreoCredenciales extends Mailable
         // incializamos los valores en el constructor
         $this->name = $name;
         $this->user = $user; 
-        $this->pass = $pass; 
+        $this->pass = $pass;
     }
 
     /**
@@ -37,7 +37,7 @@ class EnviarCorreoCredenciales extends Mailable
     {
         return new Envelope(
             from: new Address("letskody86@gmail.com", "Let's Kody"),
-            subject: "Credenciales de " . $this->name,
+            subject: "Nuevas credenciales de " . $this->name,
         );
     }
 
@@ -47,7 +47,7 @@ class EnviarCorreoCredenciales extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mails.credenciales',  // vista donde se genera el contenido del correo
+            view: 'mails.nuevas-credenciales',  // vista donde se genera el contenido del correo
         );
     }
 
