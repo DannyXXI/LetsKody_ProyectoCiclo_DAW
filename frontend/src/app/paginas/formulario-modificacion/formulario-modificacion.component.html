@@ -1,9 +1,9 @@
 <!-- contenedor principal para el contenido del componente -->
-<main id="contenedor-registro">
+<main id="contenedor-modificacion">
 
     <!-- contenedor para el formulario de registro -->
-    <section class="formulario-registro">
-        <a routerLink="/login">Volver</a> <!-- enlace para volver a la página de login -->
+    <section class="formulario-modificacion">
+        <a [routerLink]="['/usuario', idParam, 'ajustes']">Volver</a> <!-- enlace para volver al menu de ajustes del usuario -->
         <h2>🤖 MODIFICACIÓN DE DATOS 🤖</h2>
         <form [formGroup]="formularioUpdate" (submit)="enviarFormularioUpdate($event)">
 

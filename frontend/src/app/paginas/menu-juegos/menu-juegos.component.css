@@ -1,0 +1,87 @@
+main#contenedor-menu-juegos {
+    display: flex;                    /* flexbox para alinear los elementos internos */
+    justify-content: center;          /* centrar horizontalmente los hijos */
+    align-items: center;              /* centrar verticalmente los hijos */
+    background-color: #ffffff;      /* color de fondo del componente */
+    padding: 90px;                    /* espaciado del contenedor */
+    font-family: "badcomic";          /* tipo de letra usada */
+    min-height: 100vh;                /* se establece una altura minima correspondiente a la del viewport */
+}
+
+main#contenedor-menu-juegos .menu-juegos {
+    width: 65%;                       /* limita el ancho del contenedor de texto para mantener la legibilidad */
+    padding: 30px;                    /* espaciado del contenedor */
+    background-color: #bcdbfc;      /* color de fondo del contenedor del contenedor */
+    border: 3px solid black;        /* color y grosor del borde */
+    border-radius: 15px;              /* redondeo de los bordes */
+    display: flex;                    /* flexbox para alinear los elementos internos */
+    flex-direction: column;           /* los elementos hijos se acomodan verticalmente */
+    gap: 1.1rem;                      /* espacio entre los elementos internos */
+}
+
+main#contenedor-menu-juegos .menu-juegos .parte-superior {
+    display: flex;               /* flexbox para alinear los elementos internos */
+    align-items: center;         /* centrar verticalmente los hijos */
+    width: 100%;                 /* el contenedor ocupa todo el ancho del contenedor padre */
+    gap: 40px;                   /* espacio entre los elementos internos */
+}
+
+main#contenedor-menu-juegos .menu-juegos .parte-superior h2 {
+    font-size: 2.6rem;              /* tamaño de la letra del titulo */
+}
+
+main#contenedor-menu-juegos .menu-juegos .parte-superior button {
+    background-color: yellow;     /* color de fondo del boton */
+    color:black;                  /* color de la letra de los botones */
+    font-weight: bold;              /* negrita para el texto */
+    font-size: 1rem;                /* tamaño de la letra del boton */
+    padding: 8px;                   /* espaciado interior del boton */
+    border-radius: 8px;             /* redondeo de los bordes */
+    border: none;                   /* quitamos el borde del boton */
+    cursor: pointer;                /* estilo del cursor cuando el mouse esta sobre el boton */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animaciones suaves al pasar el mouse sobre el boton */
+}
+
+main#contenedor-menu-juegos .menu-juegos .parte-superior button:hover {
+    background-color: rgb(231, 231, 0);    /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    main#contenedor-menu-juegos {
+        padding: 20px;     /* reducimos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos {
+        width: 100%;       /* ocupamos todo el ancho del contenedor padre */
+        padding: 20px;     /* reducimos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos .parte-superior h2 {
+        font-size: 2.3rem;       /* reducimos el tamaño de la letra */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos .parte-superior button {
+        font-size: 0.9rem;       /*reducimos tamaño de la letra del boton */
+    }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+    main#contenedor-menu-juegos {
+        padding: 110px;     /* aumentamos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos {
+        width: 41%;        /* reducimos el ancho del contenedor */
+        padding: 40px;     /* aumentamos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos .parte-superior h2 {
+        font-size: 3.5rem;    /* aumentamos el tamaño de la letra */
+    }
+
+    main#contenedor-menu-juegos .menu-juegos .parte-superior button {
+        font-size: 1.1rem;       /*aumentamos el tamaño de la letra del boton */
+    }
+}

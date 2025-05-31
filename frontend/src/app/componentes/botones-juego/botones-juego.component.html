@@ -1,0 +1,12 @@
+<!-- sección de la parte inferior (lista de juegos) -->
+<section class="parte-inferior">
+
+    <!--mostramos todos los juegos gracias al for -->
+    @for (item of items; track $index) {
+        <div class="boton-juego">
+            <button class="btn {{ item.claseCSS }}" [routerLink]="'/usuario/' + userId + '/' + materia + '/' + item.numero">
+                {{ item.nombre }}
+            </button>
+        </div>
+    }
+</section>

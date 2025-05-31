@@ -1,0 +1,59 @@
+.parte-inferior {
+    display: flex;               /* flexbox para alinear los elementos internos */
+    flex-direction: column;      /* los elementos hijos se acomodan verticalmente */
+    gap: 1.2rem;                 /* espacio entre los elementos internos */
+    align-items: center;         /* centrar verticalmente los hijos */
+}
+
+.parte-inferior .boton-juego {
+    width: 100%;     /* establece el ancho del contenedor de los botones */
+}
+
+.parte-inferior .boton-juego .btn {
+    width: 100%;              /* cada boton ocupa todo el ancho del contenedor padre */
+    font-size: 1.3rem;        /* tamaño de la letra de los botones */
+    padding: 12px;            /* espaciado interior de los botones */
+    border-radius: 10px;      /* redondeo de los bordes */
+    border: none;             /* quitamos el borde de los botones */
+}
+
+/* colores para los botones de la materia de geografia */
+.geografia {
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);  /* color de fondo degradado */
+    color:white;                                              /* color de la letra */
+    transition: all 0.4s ease;                                  /* animacion de la transicion */
+}
+.geografia:hover {
+    background: linear-gradient(135deg, #a97fff, #ff79d0);   /* color de fondo degradado */
+    transform: scale(1.01);                                      /* aumentamos ligeramente su escala */
+    box-shadow: 0 0 20px #ff79d0, 0 0 28px #9a68ff;          /* sombreado */
+    cursor: pointer;                                             /* estilo del cursor cuando el mouse esta sobre el boton */
+}
+
+/* colores para los botones de la materia de matematicas */
+.matematicas {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);  /* color de fondo degradado */
+    color:white;                                              /* color de la letra */
+    transition: all 0.4s ease;                                  /* animacion de la transicion */
+}
+.matematicas:hover {
+    background: linear-gradient(135deg, #ff7a91, #ff6a45);   /* color de fondo degradado */
+    transform: scale(1.01);                                      /* aumentamos ligeramente su escala */
+    box-shadow: 0 0 20px #ff647e, 0 0 30px #ff6a45;          /* sombreado */
+    cursor: pointer;                                             /* estilo del cursor cuando el mouse esta sobre el boton */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    .parte-inferior .boton-juego .btn {
+        font-size: 1.1rem;       /* reducimos el tamaño de la letra */
+    }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+    .parte-inferior .boton-juego .btn {
+        font-size: 2rem;     /* aumentamos el tamaño de la letra */
+        padding: 15px;       /* ajustamos el espaciado interior de los botones a uno uniforme */
+    }
+}

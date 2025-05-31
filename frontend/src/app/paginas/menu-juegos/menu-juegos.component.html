@@ -1,0 +1,16 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-menu-juegos">
+
+    <section class="menu-juegos">
+
+        <!-- sección de la parte superior (titulo del componente) -->
+        <section class="parte-superior">
+            <h2>{{ nombreCategoria }}</h2> <!-- nombre visible de la materia (si tiene tildes) -->
+            <button class="btn btn-primary" routerLink="/usuario/{{ idUsuario }}/menu" >Volver</button>
+        </section>
+
+        <!-- botones de los juegos de cada categoria -->
+        <!-- se pasan por input la lista de juegos, el id del usuario y la materia -->
+        <app-botones-juego [items]="juegos" [userId]="idUsuario" [materia]="materia"></app-botones-juego>
+    </section>
+</main>
