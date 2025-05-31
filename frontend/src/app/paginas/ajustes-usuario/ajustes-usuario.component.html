@@ -1,0 +1,56 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-menu-ajustes">
+
+    <section class="menu-ajustes">
+
+        <!-- sección de la parte superior (titulo del componente) -->
+        <section class="parte-superior">
+            <h2>AJUSTES</h2>
+        </section>
+
+        <!-- sección de la parte inferior (botones de opciones) -->
+        <section class="parte-inferior">
+
+            <!-- boton para modificiar ciertos datos personales del usuario -->
+            <div class="boton-ajuste">
+                <button class="btn btn-warning">
+                    <i class="fas fa-user-edit"></i>&nbsp;Modificar datos
+                </button>
+            </div>
+            
+            <!-- boton para ver los resultados del usuario en cada juego -->
+            <div class="boton-ajuste">
+                <button class="btn btn-info">
+                    <i class="fa-solid fa-award"></i>&nbsp;Puntuaciones
+                </button>
+            </div>
+
+            <!-- boton para eliminar la cuenta del usuario -->
+            <div class="boton-ajuste">
+                <button class="btn btn-danger" (click)="mostrarModal('¿Quieres eliminar tu cuenta en Let\'s Kody?', 'modalMensaje')">
+                    <i class="fas fa-user-times"></i>&nbsp;Eliminar cuenta
+                </button>
+            </div>
+
+            <!-- boton para volver al menú del usuario -->
+            <div class="boton-ajuste">
+                <button class="btn btn-secondary" [routerLink]="['/usuario', this.idParam, 'menu']">
+                    <i class="fas fa-arrow-left"></i>&nbsp;Volver al menú
+                </button>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- modal para indicar si el usuario quiere eliminar su cuenta -->
+<dialog id="modal">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">NO</button>   <!-- boton para cerrar el modal -->
+            <button type="submit" (click)="eliminarCuenta()" class="btn btn-dark">SI</button> 
+        </div>
+    </form>
+</dialog>

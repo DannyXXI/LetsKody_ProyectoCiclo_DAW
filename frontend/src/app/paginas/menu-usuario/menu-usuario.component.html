@@ -5,9 +5,9 @@
 
         <!-- sección de la parte superior (titulo de bienvenida y botones) -->
         <section class="parte-superior">
-            <h2>Bienvenido {{this.serviceUsuarios.usuario.nombreUsuario}}</h2>
+            <h2>Bienvenid&#64; {{this.serviceUsuarios.usuario.nombreUsuario}}</h2>
             <div class="botones">
-                <button class="btn btn-secondary"><i class="fas fa-cog"></i>&nbsp;Ajustes</button>     <!-- boton de ir a modificar tus datos -->
+                <button class="btn btn-secondary" [routerLink]="['/usuario', this.idParam, 'ajustes']"><i class="fas fa-cog"></i>&nbsp;Ajustes</button>     <!-- boton de ir a modificar tus datos -->
                 <button class="btn btn-danger" (click)="this.mostrarModal('¿Desea cerrar la sesion?', 'modalMensaje')"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</button> <!-- boton para cerrar sesión -->
             </div>
         </section>

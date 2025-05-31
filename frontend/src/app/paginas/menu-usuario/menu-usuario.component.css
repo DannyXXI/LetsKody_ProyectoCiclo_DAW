@@ -128,7 +128,7 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias .q
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-superior h2 {
-    font-size: 2rem;         /* reducimos el tamaño de la letra */
+    font-size: 1.7rem;         /* reducimos el tamaño de la letra */
     padding-bottom: 5px;     /* añadimos un margen inferior */
   }
 

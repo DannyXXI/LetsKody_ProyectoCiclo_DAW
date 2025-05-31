@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { GestionUsuariosService } from '../../servicios/gestion-usuarios/gestion-usuarios.service';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-menu-usuario',
+  selector: 'app-ajustes-usuario',
   imports: [RouterLink],
-  templateUrl: './menu-usuario.component.html',
-  styleUrl: './menu-usuario.component.css'
+  templateUrl: './ajustes-usuario.component.html',
+  styleUrl: './ajustes-usuario.component.css'
 })
-export class MenuUsuarioComponent implements OnInit {
+export class AjustesUsuarioComponent implements OnInit {
 
-  public idParam:string;           // variable del parametro id de la ruta parametrizada de la pagina
-  public mensajeModal: string;            // variable para el mensaje de error
+  public idParam:string;             // variable del parametro id de la ruta parametrizada de la pagina
+  public mensajeModal: string;       // variable para el mensaje del modal
 
   // método constructor del componente (se inicializa variables, añadimos servicios y enrutadores)
   constructor(public serviceUsuarios:GestionUsuariosService, public router:Router, public activeRoute:ActivatedRoute) {
@@ -33,25 +33,17 @@ export class MenuUsuarioComponent implements OnInit {
     }
   }
 
-  // metodo para mostrar los mensajes en el modal
-  public mostrarModal(mensaje:string, nombreClase:string) {
+
+  // metodo para mostrar el modal
+  public mostrarModal(mensaje:string, nombreClase:string):void {
     const dialog = document.getElementById("modal") as HTMLDialogElement;  // referencia al modal por su ID
     this.mensajeModal = mensaje;
     dialog.className= nombreClase;
     dialog.showModal();
   }
 
-  //funcion que cierra la sesion (limpiamos los datos de la interfaz) y se redirecciona al login
-  public cerrarSesion():void {
-    this.serviceUsuarios.usuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", terceros:false, puntosBanderas:0, puntosTabla:0};
-    this.router.navigate(["/login"]); // se redirecciona a la pagina del login
-  }
-
-  // metodo para mostrar los mensajes en el modal
-  public mostrarMensajeModal() {
-    const dialog = document.getElementById("modal2") as HTMLDialogElement;  // referencia al modal por su ID
-    this.mensajeModal = "Función no disponible en esta versión, ponga una matricula al autor para desbloquearla.";
-    dialog.className= "modalMensaje";
-    dialog.showModal();
+  //metodo para eliminar la cuenta y redireccionar al login
+  public eliminarCuenta():void {
+    alert("Patata")
   }
 }
