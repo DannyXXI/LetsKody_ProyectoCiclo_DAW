@@ -7,17 +7,17 @@
 
     <section class="contenedor-formulario">
         <h3>👋 BIENVENID&#64; 👋</h3>
-        <form>
+        <form [formGroup]="formularioLogin" (submit)="hacerLogin($event)">
             <div class="input-group">
-                <input type="text" class="form-control" id="user" placeholder="Introduce tu usuario..." required/>
+                <input type="text" class="form-control" id="user" placeholder="Introduce tu usuario..." formControlName="user" minlength="3" maxlength="12" required/>
             </div>
             <div class="input-group">
-                <input type="password" class="form-control" id="pass" placeholder="Introduce tu contraseña..." required/>
+                <input type="password" class="form-control" id="pass" placeholder="Introduce tu contraseña..." formControlName="pass" minlength="6" maxlength="12" required/>
             </div>
             <div class="enlace-ingreso">
                 <p>¿Eres nuevo? Haz click <a routerLink="/registro">aquí</a> para registrarte.</p>
             </div>
-            <button type="button" class="btn btn-info" (click)="abrirModal()">Enviar</button> <!-- boton de envio del formulario -->
+            <button type="submit" class="btn btn-info">Enviar</button> <!-- boton de envio del formulario -->
         </form>
     </section>
 </main>
@@ -28,11 +28,11 @@
 </footer>
 
 <!-- modal para mostrar los mensajes de error cuando se quiera hacer login -->
-<dialog id="modalError">
+<dialog id="modal">
 
     <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
     <form method="dialog">
-        <p>{{mensajeError}}</p>
+        <p [textContent]="mensajeModal" class="p-modal"></p>
         <button type="submit" class="btn btn-dark">CERRAR</button> <!-- boton para cerrar el modal -->
     </form>
 </dialog>

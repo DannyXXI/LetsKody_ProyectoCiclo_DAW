@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { NuevoUsuario } from '../../modelos/usuario-registrado';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Usuario } from '../../modelos/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,16 @@ export class GestionUsuariosService {
   private readonly URL_SERVER: string;      // host del servidor de Laravel
   public nuevoUsuario:NuevoUsuario;         // objeto que contendra los datos para un registro de usuario
   public nombresUsuariosApp:Array<string>;  // variable con los nombre de usuarios para comprobar al registrar si existe
+  public idsUsuariosApp:Array<number>;      // variable con los ids de usuarios para comprobar al iniciar sesion
+  public usuario:Usuario;                   // varaible que contiene los datos del usuario al iniciar sesion
 
   // método constructor del servicio (se inicializa variables y añadimos metodo HTTPClient)
   constructor(private http:HttpClient) {
     this.URL_SERVER = "http://127.0.0.1:8000";
     this.nuevoUsuario = {nombreCompleto:"", usuario:"", email:"", password:"", terceros:false};
     this.nombresUsuariosApp = [];
+    this.idsUsuariosApp = [];
+    this.usuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", terceros:false, puntosBanderas:0, puntosTabla:0};
   }
 
   // metodo POST para registrar un usuario en la base de datos
@@ -24,21 +29,34 @@ export class GestionUsuariosService {
     return this.http.post<any>(this.URL_SERVER + "/usuario/crear", nuevoUsuario);
   }
 
-  // metodo GET privado para todos los nombres de usuario del servidor 
-  private getUsersName():Observable<any> {
-    return this.http.get<any>(this.URL_SERVER + "/usuario/nombres");
-  }
-
-  // metodo para llamar al metodo encargado de obtener los nombres de usuario
+  // metodo para obtener todos los nombres de usuario del servidor
   public obtenerNombresUsuario(): void {
-    this.getUsersName().subscribe({
+    this.http.get<any>(this.URL_SERVER + "/usuario/nombres").subscribe({
       next: (data) => {
         this.nombresUsuariosApp = data;
       },
       error: (e) => {
-        console.error("Error al obtener los nombres de usuario", e);
+        console.error("Error al obtener los nombres de los usuarios", e);
         this.nombresUsuariosApp = [];
       }
     });
+  }
+
+  // metodo para obtener todos los ids de usuario del servidor
+  public obtenerIdsUsuario(): void {
+    this.http.get<any>(this.URL_SERVER + "/usuario/ids").subscribe({
+      next: (data) => {
+        this.idsUsuariosApp = data;
+      },
+      error: (e) => {
+        console.error("Error al obtener los ids de los usuario", e);
+        this.idsUsuariosApp = [];
+      }
+    });
+  }
+
+  // metodo POST para verificar los datos de un usuario al hacer login
+  public verificarLogin(datos:any): Observable<any> {
+    return this.http.post<any>(this.URL_SERVER + "/usuario/login", datos);
   }
 }

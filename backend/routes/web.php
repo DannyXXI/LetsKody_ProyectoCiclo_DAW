@@ -19,3 +19,7 @@ Route::post('/email/verificacion' , [EmailValidacionController::class , "enviar"
 Route::post('/usuario/crear' , [GestionUsuariosController::class , "add"]); // ruta para añadir un usuario a la base de datos
 
 Route::get('/usuario/nombres' , [GestionUsuariosController::class , "obtenerNombresUsuarios"]); // ruta para obtener todos los nombres de usuarios
+
+Route::get('/usuario/ids' , [GestionUsuariosController::class , "obtenerIdsUsuarios"]); // ruta para obtener todos los ids de los usuarios
+
+Route::post('/usuario/login' , [GestionUsuariosController::class , "verificarCredenciales"]); // ruta para comprobar las credenciales para hacer login

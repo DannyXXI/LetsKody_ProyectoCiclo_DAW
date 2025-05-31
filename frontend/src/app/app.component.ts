@@ -13,7 +13,9 @@ export class AppComponent implements OnInit{
   // método constructor del componente (se añade el servicio)
   constructor(public serviceUsuarios:GestionUsuariosService){}
 
+  // al iniciar la app que obtenga todos nombres e ids de usuarios
   ngOnInit(){
-    this.serviceUsuarios.obtenerNombresUsuario(); // al iniciar la app que obtenga todos nombres de usuarios
+    this.serviceUsuarios.obtenerNombresUsuario();
+    this.serviceUsuarios.obtenerIdsUsuario();
   }
 }

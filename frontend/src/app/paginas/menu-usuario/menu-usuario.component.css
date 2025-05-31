@@ -76,7 +76,7 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias im
   height: auto;        /* mantenemos la proporción de la imagen al ajustar el ancho */
 }
 
-#modal[open]{ 
+#modal[open],#modal2[open]{ 
   scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
   transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
 
@@ -85,7 +85,7 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias im
   }
 }
 
-#modal {
+#modal,#modal2{
   border-radius: 18px;                   /* redondeo de los bordes */
   text-align: center;                    /* se centra horizontalmente el contenido del modal */
   font-family: "badcomic";               /* tipo de letra usada en el modal */
