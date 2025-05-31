@@ -3,11 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GestionUsuariosService } from '../../servicios/gestion-usuarios/gestion-usuarios.service';
 import { EmailService } from '../../servicios/email/email.service';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-validacion-codigo',
-  imports: [FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './validacion-codigo.component.html',
   styleUrl: './validacion-codigo.component.css'
 })
@@ -20,7 +20,7 @@ export class ValidacionCodigoComponent implements OnInit{
   // método constructor del componente (se inicializa variables y añadimos servicios)
   constructor(public gestionUsuariosService:GestionUsuariosService, public emailService:EmailService, public router:Router, private location: Location) {
     this.codigoVerificacion = "";
-    this.emailUsuario = this.gestionUsuariosService.nuevoUsuario.email;
+    this.emailUsuario = this.gestionUsuariosService.nuevoUsuario.email || this.gestionUsuariosService.updateUsuario.email;
     this.mensajeModal = "";
   }
 
@@ -40,7 +40,7 @@ export class ValidacionCodigoComponent implements OnInit{
   // metodo para enviar los datos del formulario
   public comprobarCodigo(event: Event) {
     // comprobamos si se ha introducido exactamente el codigo de verificacion
-    if(this.codigoVerificacion === this.emailService.codigoVerificacion) {
+    if(this.codigoVerificacion === this.emailService.codigoVerificacion && this.gestionUsuariosService.nuevoUsuario.email) {
       
       // realizamos la solicitud HTTP al servidor para registrar el usuario
       this.gestionUsuariosService.registrarUsuario(this.gestionUsuariosService.nuevoUsuario).subscribe({
@@ -55,6 +55,21 @@ export class ValidacionCodigoComponent implements OnInit{
         }
       });
     }
+    else if(this.codigoVerificacion === this.emailService.codigoVerificacion && this.gestionUsuariosService.updateUsuario.email) {
+      
+      // realizamos la solicitud HTTP al servidor para registrar el usuario
+      this.gestionUsuariosService.actualizarUsuario(this.gestionUsuariosService.updateUsuario).subscribe({
+        next: (data) => {
+          this.mostrarModal("modalUnBoton", "Datos del usuario modificados satisfactoriamente.\nSe le ha mandado a su email sus nuevos datos de acceso.", "modalCorrect");
+          this.gestionUsuariosService.obtenerNombresUsuario();  // actualizamos la lista de nombres de usuarios
+          this.gestionUsuariosService.updateUsuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", lastPass:"", newPass:"", terceros:false}; // limpiamos la interfaz de datos de modificacion
+        },
+        error: (e) => {
+          this.mostrarModal("modalError", "Ups, ha ocurrido un error y no se ha podido modificar sus datos.", "modalError"); 
+          console.error(e);
+        }
+      });
+    }
     else {
       this.mostrarModal("modalError", "Código de verificación no válido.", "modalError");
       event.preventDefault();
@@ -63,6 +78,8 @@ export class ValidacionCodigoComponent implements OnInit{
 
   // metodo para volver a la página anterior (formulario de registro/modificacion)
   public volverAtras() {
+    this.gestionUsuariosService.nuevoUsuario = {nombreCompleto:"", usuario:"", email:"", password:"", terceros:false};
+    this.gestionUsuariosService.updateUsuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", lastPass:"", newPass:"", terceros:false};
     this.location.back(); 
   }
 
@@ -79,7 +96,7 @@ export class ValidacionCodigoComponent implements OnInit{
     if(this.gestionUsuariosService.nuevoUsuario.email && nombreClase=="modalInfo"){
       this.mensajeModal = "Si decide salir de la pantalla, no se completará el proceso de registro.";
     }
-    else if(nombreClase=="modalInfo"){
+    else if(this.gestionUsuariosService.updateUsuario.email && nombreClase=="modalInfo"){
       this.mensajeModal = "Si decide salir de la pantalla, no se guardaran los cambios en el usuario.";
     }
     else{

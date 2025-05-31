@@ -7,6 +7,7 @@ import { FormularioRegistroComponent } from './paginas/formulario-registro/formu
 import { ValidacionCodigoComponent } from './paginas/validacion-codigo/validacion-codigo.component';
 import { MenuUsuarioComponent } from './paginas/menu-usuario/menu-usuario.component';
 import { AjustesUsuarioComponent } from './paginas/ajustes-usuario/ajustes-usuario.component';
+import { FormularioModificacionComponent } from './paginas/formulario-modificacion/formulario-modificacion.component';
 
 // archivo que se encarga de las rutas entre los componentes del proyecto de Angular
 export const routes: Routes = [
@@ -19,4 +20,5 @@ export const routes: Routes = [
     {path: "validacion" , component: ValidacionCodigoComponent},  // ruta para la direccion para la página de validación de codigo por email
     {path: "usuario/:id/menu" , component: MenuUsuarioComponent},  // ruta para la direccion para la página del menu del usuario
     {path: "usuario/:id/ajustes" , component: AjustesUsuarioComponent},  // ruta para la direccion para la página de ajustes del usuario
+    {path: "usuario/:id/ajustes/modificar" , component: FormularioModificacionComponent},  // ruta para la direccion al formulario de modificación de datos
 ];

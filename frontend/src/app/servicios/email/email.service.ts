@@ -41,4 +41,9 @@ export class EmailService {
   public mandarEmailVerificacion(datos:any): Observable<any> {
     return this.http.post<any>(this.URL_SERVER + "/email/verificacion", datos);
   }
+
+  // metodo POST para mandar al servidor que mande un email de verificación para confirmar los datos modificados
+  public mandarEmailVerificacionUpdate(datos:any): Observable<any> {
+    return this.http.post<any>(this.URL_SERVER + "/email/verificacion-update", datos);
+  }
 }

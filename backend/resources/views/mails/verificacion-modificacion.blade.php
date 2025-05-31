@@ -19,7 +19,7 @@
                 {{ $codigo }}
             </div>
 
-            <p style="margin-top: 20px;">Introduce este código cuando te lo pidamos y... ¡abracadabra, tu cambio estará hecho!</p>
+            <p style="margin-top: 20px;">Introduce este código cuando te lo pidamos y... ¡chas!, tu cambio estará hecho.</p>
 
             <p style="font-size: 12px; color: #777; margin-top: 30px;">
                 Si no pediste este código, tal vez un gnomo curioso hizo travesuras por error... ¡no te preocupes, ignora este mensaje y sigue disfrutando!

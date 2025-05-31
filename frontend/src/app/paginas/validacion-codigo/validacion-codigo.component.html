@@ -4,20 +4,44 @@
     <!-- contenedor para el formulario de validación de codigo por email -->
     <section class="validacion-codigo">
 
-        <h2>🔑 CÓDIGO DE VERIFICACIÓN 🔑</h2>
+    @if(this.gestionUsuariosService.nuevoUsuario.email){
+        
+        <h2>🧙‍♂️ ¡Bienvenid&#64; aventurer&#64;! 🧙‍♂️</h2>
 
         <div class="texto-informacion">
             <p>
-                Por motivos de seguridad, se requiere 
-                que introduzca un código de seguridad que le ha 
-                sido mandado a su email (<b>{{emailUsuario}}</b>) para finalizar el proceso.
+                ¡Kody está muy emocionado de conocerte! Para unirte a esta gran aventura de aprendizaje,
+                te hemos enviado un <b>código mágico</b> a tu correo electrónico (<b>{{emailUsuario}}</b>).
             </p>
+
             <p>
-                Si no logra encontrar el mensaje en la bandeja de recibidos, pruebe a mirar por si acaso su servicio de correo 
-                electrónico le ha mandado el mensaje a la bandeja de "correo no deseado".
+                Busca el mensaje en tu buzón (y si no lo ves, revisa también en “correo no deseado” por si algún duende lo escondió por error).
+            </p>
+
+            <p>
+                ¡Escribe el código donde se te pida y desbloquearás tu acceso al mundo de Kody!
+            </p>            
+        </div>
+    }
+    @else {
+
+        <h2>🔐 ¡Asegura tu mochila mágica! 🔐</h2>
+
+        <div class="texto-informacion">
+            <p>
+                Para asegurarnos de que eres tú quien está haciendo estos cambios importantes,
+                hemos mandado un <b>código secreto</b> al correo (<b>{{emailUsuario}}</b>).
+            </p>
+
+            <p>
+                Si no lo encuentras, ¡echa un vistazo en la carpeta de “correo no deseado”! A veces, los búhos mensajeros se confunden de nido.
+            </p>
+
+            <p>
+                Introduce el código y todo estará listo para seguir tu viaje mágico con Kody.
             </p>
         </div>
-
+    }
         <div class="formulario-validacion">
             <form (submit)="comprobarCodigo($event)">
                 <div class="input-group">

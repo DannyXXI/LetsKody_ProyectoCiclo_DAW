@@ -1,0 +1,192 @@
+main#contenedor-registro {
+  display: flex;                    /* flexbox para alinear los elementos internos */
+  justify-content: center;          /* centrar horizontalmente los hijos */
+  align-items: center;              /* centrar verticalmente los hijos */
+  background-color: #ffffff;      /* color de fondo del componente */
+  padding: 20px;                    /* espaciado interno del contenedor */
+  font-family: "badcomic";          /* tipo de letra usada */
+}
+
+main#contenedor-registro .formulario-registro {
+  width: 700px;                      /* ancho del contenedor del formulario en pantallas normales */
+  display: flex;                     /* flexbox para alinear los elementos internos */
+  flex-direction: column;            /* los elementos hijos se acomodan verticalmente */
+  padding: 20px;                     /* espaciado interno del contenedor */
+  border: 2px solid black;         /* color y grosor del borde */
+  border-radius: 15px;               /* redondeo de los bordes */
+  background-color: lightblue;     /* color de fondo del componente */
+}
+
+main#contenedor-registro .formulario-registro a {
+  margin-bottom: 10px;        /* margen inferior */
+  text-align: right;          /* se centra a la derecha el texto del enlace */
+  text-decoration: none;      /* se quita el subrayado del enlace */
+  font-size: 1.3rem;          /* tamaño de la letra del enlace */
+  color: red;               /* color del enlace */
+}
+
+main#contenedor-registro .formulario-registro h2 {
+  margin-bottom: 22px;         /* margen inferior */
+  text-align: center;          /* se centra horizontalmente el texto del titulo */
+  font-size: 2.3rem;           /* tamaño de la letra del titulo del formulario */
+  font-weight: bold;           /* negrita para el texto */
+}
+
+main#contenedor-registro .formulario-registro form {
+  display: flex;              /* flexbox para alinear los elementos internos */
+  flex-direction: column;     /* los elementos hijos se acomodan verticalmente */
+  gap: 16px;                  /* espacio entre campos del formulario */
+}
+
+main#contenedor-registro .formulario-registro .label-input {
+  margin-bottom: 5px;         /* margen inferior */
+  font-weight: bold;          /* negrita para el texto */
+  font-size: 1rem;            /* tamaño de la letra para los labels de los inputs */
+}
+
+main#contenedor-registro .formulario-registro .form-control {
+  font-size: 1rem;              /* tamaño de la letra para los inputs */
+  padding: 10px;                /* espaciado interno de los inputs */
+  border-radius: 7px;           /* redondeo de los bordes */
+  border: 1px solid #ccc;     /* color y grosor del borde */
+  width: 100%;                  /* ocupa todo el ancho disponible */
+}
+
+main#contenedor-registro .formulario-registro .form-check-label {
+  margin-left: 5px;     /* margen izquierdo respecto al checkbox */
+  font-size: 1rem;      /* tamaño de la letra para los labels de los checkbox */
+}
+
+main#contenedor-registro .formulario-registro .form-check-input {
+  margin-right: 5px;        /* margen derecho respecto al label del checkbox */
+  transform: scale(1.2);    /* se aumenta el tamaño del checkbox */
+  border-radius: 50%;       /* checkbox redondo */
+}
+
+main#contenedor-registro .formulario-registro .g-recaptcha {
+  display: flex;             /* flexbox para alinear los elementos internos */
+  justify-content: center;   /* se centra el widget del reCAPTCHA en su contenedor */
+}
+
+main#contenedor-registro .formulario-registro .btn {
+  display: block;                  /* hace que el botón ocupe toda la línea disponible */
+  margin: 0 auto;                  /* se centra el boton horizontalmente */
+  width: 35%;                      /* ancho relativo del boton respecto a su contenedor padre */
+  padding: 10px;                   /* espaciado de 10px del interior del boton */
+  font-size: 1rem;                 /* tamaño de la letra del boton de envio del formulario */
+  font-weight: bold;               /* negrita para el texto */
+  border-radius: 10px;             /* redondeo de los bordes */
+  background-color: yellow;      /* color de fondo del boton */
+  border: 0;                       /* quitamos el borde del boton */
+  color: black;                  /* color del texto del boton */
+  cursor: pointer;                 /* estilo del cursor cuando el mouse esta sobre el boton */
+  transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animaciones suaves al pasar el mouse sobre el boton */
+}
+
+main#contenedor-registro .formulario-registro .btn:hover {
+  background-color: rgb(231, 231, 0);    /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+#modal[open]{ 
+  scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
+  transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
+
+  @starting-style {
+    scale: 0;                          /* estado inicial del modal antes de hacerse visible */
+  }
+}
+
+#modal {
+  border-radius: 18px;                   /* redondeo de los bordes */
+  text-align: center;                    /* se centra horizontalmente el contenido del modal */
+  font-family: "badcomic";               /* tipo de letra usada en el modal */
+  scale: 0;                              /* estado inicial del modal (se usa con 'transition') */
+  transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
+}
+
+.modalError {
+  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
+  border-color: rgb(255, 37, 37);        /* color del borde del modal */
+}
+
+.p-modal {
+  white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+  main#contenedor-registro .formulario-registro a {
+    font-size: 1.1rem;    /* se reduce el tamaño de la letra del enlace */
+  }
+
+  main#contenedor-registro .formulario-registro h2 {
+    font-size: 5.6vw;     /* el tamaño de la letra del titulo del formulario es relativo al ancho de la pantalla */
+  }
+
+  main#contenedor-registro .formulario-registro .label-input {
+    font-size: 0.90rem;   /* se reduce el tamaño de la letra del label de los input */
+  }
+
+  main#contenedor-registro .formulario-registro .form-check-label {
+    font-size: 0.91rem;   /* se reduce el tamaño de la letra del label de los checkbox */
+  }
+
+  main#contenedor-registro .formulario-registro .form-check-input {
+    transform: scale(1); /* se ajusta el tamaño del checkbox al estándar */
+  }
+
+  main#contenedor-registro .formulario-registro .btn {
+    width: 40%;          /* se aumenta el ancho del boton de envio */
+    font-size: 0.95rem;  /* se reduce el tamaño de la letra del boton de envio */
+  }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+  main#contenedor-registro {
+    min-height: 100vh;   /* se establece una altura correspondiente a la altura del viewport */
+  }
+
+  main#contenedor-registro .formulario-registro {
+    width: 50%;          /* se aumenta el ancho del contenedor del formulario */
+    padding: 28px;       /* se aumenta el espaciado interno */
+  }
+
+  main#contenedor-registro .formulario-registro a {
+    margin-bottom: 15px;  /* se aumenta el margen inferior */
+    font-size: 2.3rem;    /* se aumenta el tamaño de la letra del enlace */
+  }
+
+  main#contenedor-registro .formulario-registro h2 {
+    margin-bottom: 25px;  /* se aumenta el margen inferior */
+    font-size: 3.7rem;    /* se aumenta el tamaño de la letra del titulo del formulario */
+  }
+
+  main#contenedor-registro .formulario-registro form {
+    gap: 18px;      /* se incrementa el espacio entre los campos del formulario */
+  }
+
+  main#contenedor-registro .formulario-registro .label-input {
+    margin-bottom: 6px;  /* se aumenta el margen inferior */
+    font-size: 1.5rem;   /* se aumenta el tamaño de la letra del label de los input */
+  }
+
+  main#contenedor-registro .formulario-registro .form-control {
+    font-size: 1.2rem;   /* se aumenta el tamaño de la letra de los input */
+  }
+
+  main#contenedor-registro .formulario-registro .form-check-label {
+    margin-left: 7px;    /* se aumenta el margen izquierdo */
+    font-size: 1.4rem;   /* se aumenta el tamaño de la letra del label de los checkbox */
+  }
+
+  main#contenedor-registro .formulario-registro .form-check-input {
+    margin-right: 7px;       /* se aumenta el margen derecho */
+    transform: scale(1.5);   /* se aumenta el tamaño del checkbox */
+  }
+
+  main#contenedor-registro .formulario-registro .btn {
+    width: 20%;          /* se reduce el ancho del boton */
+    font-size: 1.6rem;   /* se aumenta el tamaño de la letra del boton de envio */
+  }
+}

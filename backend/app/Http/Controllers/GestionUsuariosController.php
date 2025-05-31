@@ -7,6 +7,7 @@ use App\Models\Usuarios;                   // se importa el modelo de la tabla
 use Illuminate\Support\Facades\Hash;       // se importa la clase Hash para encriptar
 use Illuminate\Support\Facades\Mail;       // importamos la clase Mail para mandar el email
 use App\Mail\EnviarCorreoCredenciales;     // se importa el modelo del envio del correo de credenciales
+use App\Mail\EnviarCorreoNuevasCredenciales;     // se importa el modelo del envio del correo de credenciales modificadas
 
 class GestionUsuariosController extends Controller
 {
@@ -67,5 +68,49 @@ class GestionUsuariosController extends Controller
             'email' => $user->email,
             'terceros' => $user->terceros
         ], 200);
+    }
+
+    // metodo para actualizar los datos del usuario en la base de datos
+    public function update(Request $request){
+
+        $usuario = Usuarios::find($request->input("id"));   // obtenemos el usuario por su ID
+
+        // si no existe el usuario que se busca actualizar
+        if (!$usuario) {
+            return response()->json(["mensajeError" => "Usuario no encontrado."], 404);
+        }
+
+        // primero comprobamos si se ha enviado las contraseñas
+        if( !empty($request->input("lastPass")) && !empty($request->input("newPass")) ) {
+
+            // verificar si la contraseña anterior coincide con la del usuario para actualizarla con la nueva
+            if (!Hash::check($request->input("lastPass"), $usuario->password)) {
+                return response()->json(["mensajeError" => 'La contraseña anterior no corresponde con su contraseña actual.'], 200);
+            }
+            else {
+                $usuario->password = Hash::make($request->input("newPass")); // se actualiza la contraseña con el valor encriptado
+            }
+        }
+
+        // si el nombre de usuario viene vacio no se actualiza
+        if( !empty($request->input("nombreUsuario")) ) {
+
+            $usuario->nombreUsuario = $request->input("nombreUsuario");
+        }
+
+        // si la dirección de email viene vacia no se actualiza
+        if( !empty($request->input("email")) ) {
+
+            $usuario->email = $request->input("email");
+        }
+        
+        $usuario->terceros = $request->input("terceros"); // se actualiza el campo de uso de datos a terceros
+        
+        $usuario->save(); // se guardan los cambios realizados
+
+        // enviamos las credenciales de acceso al usuario a su direccion de email
+        Mail::to($request->input("email"))->send(new EnviarCorreoNuevasCredenciales($request->input("nombreCompleto"), $request->input("nombreUsuario"), $request->input("newPass")));
+
+        return response()->json(["mensajeCorrecto" => "Usuario actualizado correctamente."], 200);
     }
 }

@@ -14,7 +14,7 @@ Route::post('/email/soporte' , [EmailSoporteController::class , "crear"]); // ru
 
 Route::post('/recaptcha', [RecaptchaController::class , "verificar"]); // ruta para tratar la verificiación del reCAPTCHA
 
-Route::post('/email/verificacion' , [EmailValidacionController::class , "enviar"]); // ruta para envio de emails de verificacion
+Route::post('/email/verificacion' , [EmailValidacionController::class , "enviarRegistro"]); // ruta para envio de emails de verificacion
 
 Route::post('/usuario/crear' , [GestionUsuariosController::class , "add"]); // ruta para añadir un usuario a la base de datos
 
@@ -23,3 +23,7 @@ Route::get('/usuario/nombres' , [GestionUsuariosController::class , "obtenerNomb
 Route::get('/usuario/ids' , [GestionUsuariosController::class , "obtenerIdsUsuarios"]); // ruta para obtener todos los ids de los usuarios
 
 Route::post('/usuario/login' , [GestionUsuariosController::class , "verificarCredenciales"]); // ruta para comprobar las credenciales para hacer login
+
+Route::patch('/usuario/modificar' , [GestionUsuariosController::class , "update"]); // ruta para actualizar parcialmente los datos del usuario en la base de datos
+
+Route::post('/email/verificacion-update' , [EmailValidacionController::class , "enviarModificacion"]); // ruta para envio de emails de verificacion

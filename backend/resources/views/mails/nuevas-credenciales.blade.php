@@ -17,7 +17,12 @@
 
             <div style="margin-top: 20px; text-align: left; background-color: #f0faff; padding: 20px; border-radius: 12px; font-size: 16px; line-height: 1.6;">
                 <strong>👤 Nombre de usuario:</strong> <span style="color: #0077cc;">{{ $user }}</span><br>
-                <strong>🔐 Contraseña:</strong> <span style="color: #0077cc;">{{ $pass }}</span>
+                @if (!$pass) 
+                    <strong>🔐 Contraseña:</strong> <span style="color: #0077cc;"><i>no ha sido modificada<i></span>
+                @else
+                    <strong>🔐 Contraseña:</strong> <span style="color: #0077cc;">{{ $pass }}</span>
+                @endif
+                
             </div>
 
             <p style="margin-top: 20px;">Guárdalas en tu mochila mágica y úsalas para seguir explorando sin límites.</p>

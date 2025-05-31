@@ -9,7 +9,7 @@ main#contenedor-validacion {
 }
 
 main#contenedor-validacion .validacion-codigo {
-  width: 700px;                    /* ancho del contenedor que contiene el formulario y textos de validación */
+  width: 730px;                    /* ancho del contenedor que contiene el formulario y textos de validación */
   display: flex;                   /* flexbox para alinear los elementos internos */
   flex-direction: column;          /* los elementos hijos se acomodan verticalmente */
   padding: 25px;                   /* espaciado interno del contenedor */
@@ -106,7 +106,7 @@ main#contenedor-validacion .validacion-codigo .btn {
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
 @media (width < 992px) {
   main#contenedor-validacion .validacion-codigo h2 {
-    font-size: 4.7vw;       /* el tamaño de la letra del titulo del formulario es relativo al ancho de la pantalla */
+    font-size: 4.5vw;       /* el tamaño de la letra del titulo del formulario es relativo al ancho de la pantalla */
   }
 
   main#contenedor-validacion .validacion-codigo .texto-informacion {

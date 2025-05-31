@@ -3,6 +3,7 @@ import { NuevoUsuario } from '../../modelos/usuario-registrado';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../../modelos/usuario';
+import { UpdateUsuario } from '../../modelos/usuario-modificado';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class GestionUsuariosService {
   public nombresUsuariosApp:Array<string>;  // variable con los nombre de usuarios para comprobar al registrar si existe
   public idsUsuariosApp:Array<number>;      // variable con los ids de usuarios para comprobar al iniciar sesion
   public usuario:Usuario;                   // varaible que contiene los datos del usuario al iniciar sesion
+  public updateUsuario:UpdateUsuario;       // objeto que contendra los datos para la modificacion del usuario
 
   // método constructor del servicio (se inicializa variables y añadimos metodo HTTPClient)
   constructor(private http:HttpClient) {
@@ -22,6 +24,7 @@ export class GestionUsuariosService {
     this.nombresUsuariosApp = [];
     this.idsUsuariosApp = [];
     this.usuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", terceros:false, puntosBanderas:0, puntosTabla:0};
+    this.updateUsuario = {id:0, nombreCompleto:"", nombreUsuario:"", email:"", lastPass:"", newPass:"", terceros:false};
   }
 
   // metodo POST para registrar un usuario en la base de datos
@@ -58,5 +61,10 @@ export class GestionUsuariosService {
   // metodo POST para verificar los datos de un usuario al hacer login
   public verificarLogin(datos:any): Observable<any> {
     return this.http.post<any>(this.URL_SERVER + "/usuario/login", datos);
+  }
+
+  // metodo PATCH para actualizar parcialemente los datos del usuario en la base de datos
+  public actualizarUsuario(updateUsuario:UpdateUsuario): Observable<any> {
+    return this.http.patch<any>(this.URL_SERVER + "/usuario/modificar", updateUsuario);
   }
 }
