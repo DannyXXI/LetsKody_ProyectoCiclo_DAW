@@ -1,0 +1,136 @@
+main#contenedor-menu-numinario1 {
+    display: flex;                    /* flexbox para alinear los elementos internos */
+    justify-content: center;          /* centrar horizontalmente los hijos */
+    align-items: center;              /* centrar verticalmente los hijos */
+    background-color: #ffb1b1;      /* color de fondo del componente */
+    padding: 90px;                    /* espaciado del contenedor */
+    font-family: "badcomic";          /* tipo de letra usada */
+    min-height: 100vh;                /* se establece la altura minima correspondiente a la altura del viewport */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 {
+    width: 70%;                       /* limita el ancho del contenedor de texto para mantener la legibilidad */
+    height: auto;                     /* la altura se establece automaticamente respecto al contenedor padre */
+    display: flex;                    /* flexbox para alinear los elementos internos */
+    flex-direction: column;           /* los elementos hijos se acomodan verticalmente */
+    padding: 25px;                    /* espaciado del contenedor */
+    border: 3px solid black;        /* color y grosor del borde */
+    border-radius: 15px;              /* redondeo de los bordes */
+    background-color: #d6eaff;      /* color de fondo del contenedor del formulario */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-superior {
+    display: flex;                      /* flexbox para alinear los elementos internos */
+    align-items: center;                /* centrar verticalmente los hijos */
+    justify-content: center;            /* centrar horizontalmente los hijos */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-superior h2 {
+    font-size: 3.2rem;                     /* tamaño de la letra del titulo */
+    color:#ff5f5f;                       /* color de la letra del titulo */
+    font-weight: bold;                     /* se aplica negrita al texto */
+    -webkit-text-stroke: 1.3px black;    /* borde y grosor para las letras (para navegadores WebKit) */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-media .info{
+    text-align: justify;    /* se alinea el texto de manera justificada */
+    font-size: 1.13rem;     /* tamaño de la letra de la informacion */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior {
+    display: flex;                      /* flexbox para alinear los elementos internos */
+    align-items: center;                /* centrar verticalmente los hijos */
+    justify-content: center;            /* centrar horizontalmente los hijos */
+    gap: 30px;                          /* espacio entre los elementos internos */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior button{
+    width: 50%;              /* cada boton ocupa todo el ancho del contenedor padre */
+    font-size: 1.4rem;       /* tamaño de la letra de los botones */
+    padding: 12px;           /* espaciado interior de los botones */
+    border-radius: 10px;     /* redondeo de los bordes */
+    border: none;            /* quitamos el borde de los botones */
+    color: black;          /* color de la letra de los botones */
+    cursor: pointer;         /* estilo del cursor cuando el mouse esta sobre el boton */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior .btn-primary{
+    background-color: rgb(228, 5, 5);  /* color de fondo del boton */
+    color:  white;                     /* color de la letra de los botones */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animacion suave al pasar el mouse sobre el boton */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior .btn-primary:hover{
+    background-color: rgb(153, 10, 10);   /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior .btn-success{
+    background-color: rgb(5, 228, 79);    /* color de fondo del boton */
+    color:  black;                        /* color de la letra de los botones */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animacion suave al pasar el mouse sobre el boton */
+}
+
+main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior .btn-success:hover{
+    background-color: rgb(46, 153, 10);   /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    main#contenedor-menu-numinario1 {
+        padding: 20px;     /* reducimos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 {
+        width: 100%;       /* ocupamos todo el ancho del contenedor padre */
+        padding: 20px;     /* reducimos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-superior h2 {
+        font-size: 2.8rem;         /* reducimos el tamaño de la letra */
+        margin-bottom: 10px;     /* añadimos un margen inferior */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-media .info{
+        text-align: justify;    /* se alinea el texto de manera justificada */
+        font-size: 1rem;     /* tamaño de la letra de la informacion */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior {
+        gap: 15px;                          /* espacio entre los elementos internos */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior button{
+        font-size: 1.1rem;       /* tamaño de la letra de los botones */
+        padding: 10px;           /* espaciado interior de los botones */
+    }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+    main#contenedor-menu-numinario1 {
+        padding: 110px;        /* aumentamos el espaciado del contenedor */ 
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 {
+        width: 60%;            /* reducimos el ancho del contenedor */
+        padding: 35px;         /* aumentamos el espaciado del contenedor */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-superior h2 {
+        font-size: 4rem;         /* aumentamos el tamaño de la letra */
+        margin-bottom: 10px;     /* añadimos un margen inferior */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-media .info{
+        font-size: 1.7rem;     /* aumentamos el tamaño de la letra */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior {
+        gap: 3rem;      /* aumentamos el espacio entre los botones */
+    }
+
+    main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior button{
+        padding: 11px;       /* aumentamos el espaciado del boton */
+        font-size: 1.7rem;   /* aumentamos el tamaño de la letra */
+    }
+}

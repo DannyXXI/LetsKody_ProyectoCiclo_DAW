@@ -1,0 +1,37 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-menu-numinario1">
+
+    <section class="menu-numinario1">
+
+        <!-- sección de la parte superior (titulo de bienvenida y botones) -->
+        <section class="parte-superior">
+            <h2>Numinario I</h2>
+        </section>
+
+        <!-- sección de la parte inferior (descripcion graciosa del juego) -->
+        <section class="parte-media">
+            <div class="info">
+                <p>
+                    ¡Hola, joven matemático! Te había invitado a mi estudio porque quería enseñarte un increible dibujo 
+                    que me ha realizado mi buen amigo el pintor Don Brochazo, pero ha aparecido el travieso 
+                    mago Tutifruti y ha vuelto a hacer de las suyas... 
+                </p>
+                <p>
+                    Cuando nadie miraba ha lanzado un hechizo a mi dibujo y lo ha ocultado tras una niebla de números 
+                    mágicos, eres mi única esperanza de poder recuperar mi dibujo antes que se pierda entre tantos números.
+                </p>    
+                <p>
+                    Resuelve las sumas o restas que aparezcan para liberar cada parte del dibujo. ¿Serás capaz de descubir el dibujo que
+                    Kody quería enseñarte? ¡Vamos, el Numinario te espera!
+                </p>
+            </div>
+        </section>
+
+        <!-- sección de la parte inferior (botones de jugar o volver al menú)-->
+        <section class="parte-inferior">
+            <button class="btn btn-primary" [routerLink]="'/usuario/' + userId + '/matematicas'">Volver al menú</button>     
+            <button class="btn btn-success" [routerLink]="'/usuario/' + userId + '/matematicas/1/play'">Jugar</button>
+        </section>
+    
+    </section>
+</main>

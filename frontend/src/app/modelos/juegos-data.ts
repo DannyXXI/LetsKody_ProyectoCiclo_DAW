@@ -12,7 +12,7 @@ export const juegosPorMateria: Record<string, Juego[]> = {
     { nombre: "Euro-Banderas", numero: 1, claseCSS: "geografia" }
   ],
   matematicas: [
-    { nombre: "Numinario", numero: 1, claseCSS: "matematicas" }
+    { nombre: "Numinario I", numero: 1, claseCSS: "matematicas" }
   ]
 };
 

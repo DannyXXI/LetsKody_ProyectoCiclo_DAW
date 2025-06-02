@@ -50,7 +50,7 @@ export class MenuUsuarioComponent implements OnInit {
   // metodo para mostrar los mensajes en el modal
   public mostrarMensajeModal() {
     const dialog = document.getElementById("modal2") as HTMLDialogElement;  // referencia al modal por su ID
-    this.mensajeModal = "Función no disponible en esta versión, ponga una matricula al autor para desbloquearla.";
+    this.mensajeModal = "Función no disponible en esta versión, pongase en contacto con el autor.";
     dialog.className= "modalMensaje";
     dialog.showModal();
   }
