@@ -74,6 +74,32 @@ main#contenedor-menu-numinario1 .menu-numinario1 .parte-inferior .btn-success:ho
     background-color: rgb(46, 153, 10);   /* color de fondo del boton cuando este el mouse sobre el boton */
 }
 
+#modal[open]{ 
+  scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
+  transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
+
+  @starting-style {
+    scale: 0;                          /* estado inicial del modal antes de hacerse visible */
+  }
+}
+
+#modal{
+  border-radius: 18px;                   /* redondeo de los bordes */
+  text-align: center;                    /* se centra horizontalmente el contenido del modal */
+  font-family: "badcomic";               /* tipo de letra usada en el modal */
+  scale: 0;                              /* estado inicial del modal (se usa con 'transition') */
+  transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
+}
+
+.modalMensaje {
+  background-color: rgb(197, 122, 255);   /* color de fondo del modal */
+  border-color: rgb(168, 37, 255);        /* color del borde del modal */
+}
+
+.p-modal {
+  white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
+}
+
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
 @media (width < 992px) {
     main#contenedor-menu-numinario1 {

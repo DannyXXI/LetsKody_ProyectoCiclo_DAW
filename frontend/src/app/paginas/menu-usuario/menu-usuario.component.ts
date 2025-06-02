@@ -47,7 +47,7 @@ export class MenuUsuarioComponent implements OnInit {
     this.router.navigate(["/login"]); // se redirecciona a la pagina del login
   }
 
-  // metodo para mostrar los mensajes en el modal
+  // metodo para mostrar el modal de bloqueo de funciones
   public mostrarMensajeModal() {
     const dialog = document.getElementById("modal2") as HTMLDialogElement;  // referencia al modal por su ID
     this.mensajeModal = "Función no disponible en esta versión, pongase en contacto con el autor.";

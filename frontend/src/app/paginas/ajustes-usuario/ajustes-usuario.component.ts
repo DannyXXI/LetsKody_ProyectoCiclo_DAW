@@ -44,6 +44,14 @@ export class AjustesUsuarioComponent implements OnInit {
 
   //metodo para eliminar la cuenta y redireccionar al login
   public eliminarCuenta():void {
-    alert("Patata")
+    alert("Función no disponible en esta versión, pongase en contacto con el autor.")
+  }
+
+    // metodo para mostrar el modal de bloqueo de funciones
+  public mostrarMensajeModal() {
+    const dialog = document.getElementById("modal2") as HTMLDialogElement;  // referencia al modal por su ID
+    this.mensajeModal = "Función no disponible en esta versión, pongase en contacto con el autor.";
+    dialog.className= "modalMensaje";
+    dialog.showModal();
   }
 }

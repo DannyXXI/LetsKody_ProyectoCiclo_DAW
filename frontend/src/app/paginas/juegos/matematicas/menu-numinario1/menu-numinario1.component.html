@@ -30,8 +30,20 @@
         <!-- sección de la parte inferior (botones de jugar o volver al menú)-->
         <section class="parte-inferior">
             <button class="btn btn-primary" [routerLink]="'/usuario/' + userId + '/matematicas'">Volver al menú</button>     
-            <button class="btn btn-success" [routerLink]="'/usuario/' + userId + '/matematicas/1/play'">Jugar</button>
+            <button class="btn btn-success" (click)="mostrarMensajeModal()">Jugar</button>
         </section>
     
     </section>
 </main>
+
+<!-- modal para indicar al usuario las funciones no disponibles -->
+<dialog id="modal">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">CERRAR</button>
+        </div>
+    </form>
+</dialog>
