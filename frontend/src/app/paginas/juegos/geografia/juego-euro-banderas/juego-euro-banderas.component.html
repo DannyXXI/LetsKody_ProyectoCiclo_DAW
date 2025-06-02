@@ -1,0 +1,54 @@
+<main id="contenedor-juego-eurobanderas">
+
+    <!-- encabezado con puntos y enlace de volver -->
+    <div class="encabezado-juego">
+        <div class="puntos"><b>Puntos: {{puntos}}</b></div>
+        <a class="btn volver-menu" (click)="mostrarModalAbandonar()">Volver al menú</a>
+    </div>
+
+    <section class="juego-eurobanderas">
+
+        <!-- sección de la parte superior (imagen de la bandera) -->
+        <section class="parte-imagen">
+            <img src="{{urlBandera}}" alt="Bandera de prueba">
+        </section>
+
+        <!-- sección de la parte inferior (botones con las opciones) -->
+        <section class="parte-botones">
+            <div class="info">
+                <button class="btn" (click)="mandarValor(op1)">{{op1}}</button>
+                <button class="btn" (click)="mandarValor(op2)">{{op2}}</button>
+                <button class="btn" (click)="mandarValor(op3)">{{op3}}</button>
+                <button class="btn" (click)="mandarValor(op4)">{{op4}}</button>
+            </div>
+            <button class="btn boton-pasar" (click)="mandarValor('pasarPregunta')">Pasar</button>
+        </section>
+
+    </section>
+</main>
+
+<!-- modal para indicar si el usuario quiere abandonar su y volver al menú del juego -->
+<dialog id="modalAbandonar" class="modalJuego">
+    <form method="dialog">
+        <p class="p-modal">¿Quieres abandonar tu progreso en el juego?<br>Volverás al menú del juego.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">NO</button>
+            <button type="submit" [routerLink]="'/usuario/' +idParam + '/geografia/1'" class="btn btn-dark">SI</button> 
+        </div>
+    </form>
+</dialog>
+
+<!-- modal para indicar los resultados de la partida al jugador -->
+<dialog id="modalfinJuego" class="modalJuego">
+    <form method="dialog">
+        <h3>GAME OVER</h3>
+        <p class="p-modal" style="text-align:justify"><b>✅ Aciertos:</b> {{aciertos}}</p>
+        <p class="p-modal" style="text-align:justify"><b>❌ Fallos:</b> {{fallos}}</p>
+        <p class="p-modal" style="text-align:justify"><b>❓ Preguntas saltadas:</b> {{saltadas}}</p>
+        <p class="p-modal" style="text-align:justify"><b>🎲 Puntos:</b> {{puntos}}.</p>
+        <p class="p-modal" style="text-align:justify"><b>⏱️ Tiempo:</b> {{tiempoFinal}} segundos</p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark" (click)="guardarActualizarPuntuacion()">CERRAR</button>
+        </div>
+    </form>
+</dialog>

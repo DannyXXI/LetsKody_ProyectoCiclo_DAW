@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarIndexComponent } from '../../componentes/navbar-index/navbar-index.component';
 import { RedesSocialesComponent } from '../../componentes/redes-sociales/redes-sociales.component';
 import { Router, RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { GestionUsuariosService } from '../../servicios/gestion-usuarios/gestion
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   public mensajeModal: string;  // variable para el mensaje de error
   public formularioLogin: FormGroup;  // variable para el formulario
@@ -24,6 +24,12 @@ export class LoginComponent {
     this.user = new FormControl("");
     this.pass = new FormControl("");
     this.formularioLogin = new FormGroup({ user:this.user , pass:this.pass });
+  }
+
+   // al iniciar la app que obtenga todos nombres e ids de usuarios
+  ngOnInit(){
+    this.serviciosUsuario.obtenerNombresUsuario();
+    this.serviciosUsuario.obtenerIdsUsuario();
   }
 
   // metodo para enviar los datos del formulario

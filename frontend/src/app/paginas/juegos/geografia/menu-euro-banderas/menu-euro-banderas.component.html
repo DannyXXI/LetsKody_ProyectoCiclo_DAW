@@ -1,0 +1,34 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-menu-eurobanderas">
+
+    <section class="menu-eurobanderas">
+
+        <!-- sección de la parte superior (titulo de bienvenida y botones) -->
+        <section class="parte-superior">
+            <h2>Euro-Banderas</h2>
+        </section>
+
+        <!-- sección de la parte inferior (carrusel con las asignaturas) -->
+        <section class="parte-media">
+            <div class="info">
+                <p>
+                    ¡Hola, joven explorador! Hoy vamos a descubir las banderas de Europa... o eso creía, hasta 
+                    que en mi último viaje en globo aerostático sobre los Alpes perdí el archivo que tenía los nombres. 
+                    Ahora necesito tu vista de detective para juntar cada bandera con su país, antes de que llegue el 
+                    equipo de rescate con el archivo perdido… y me echen la bronca por llevarme cosas importantes a la expedición sin cuidado.
+                </p>
+                <p>
+                    Te mostraré una bandera y tendrás cuatro opciones para a que país pertenece. 
+                    ¿Cuántas podrás acertar antes de que llegue la ayuda? ¡Vamos, la aventura te espera!
+                </p>
+            </div>
+        </section>
+
+        <section class="parte-inferior">
+            <button class="btn btn-primary" [routerLink]="'/usuario/' + userId + '/geografia'">Volver al menú</button>     
+            <button class="btn btn-success" [routerLink]="'/usuario/' + userId + '/geografia/1/play'">Jugar</button>
+        </section>
+    
+    </section>
+</main>
+    

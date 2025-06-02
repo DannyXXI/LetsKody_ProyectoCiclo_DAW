@@ -9,6 +9,8 @@ import { MenuUsuarioComponent } from './paginas/menu-usuario/menu-usuario.compon
 import { AjustesUsuarioComponent } from './paginas/ajustes-usuario/ajustes-usuario.component';
 import { FormularioModificacionComponent } from './paginas/formulario-modificacion/formulario-modificacion.component';
 import { MenuJuegosComponent } from './paginas/menu-juegos/menu-juegos.component';
+import { MenuEuroBanderasComponent } from './paginas/juegos/geografia/menu-euro-banderas/menu-euro-banderas.component';
+import { JuegoEuroBanderasComponent } from './paginas/juegos/geografia/juego-euro-banderas/juego-euro-banderas.component';
 
 // archivo que se encarga de las rutas entre los componentes del proyecto de Angular
 export const routes: Routes = [
@@ -23,4 +25,6 @@ export const routes: Routes = [
     {path: "usuario/:id/ajustes" , component: AjustesUsuarioComponent},  // ruta para la direccion para la página de ajustes del usuario
     {path: "usuario/:id/ajustes/modificar" , component: FormularioModificacionComponent},  // ruta para la direccion al formulario de modificación de datos
     {path: "usuario/:id/:materia" , component: MenuJuegosComponent},  // ruta para la direccion la menu de juegos
+    {path: "usuario/:id/geografia/1" , component: MenuEuroBanderasComponent},  // ruta para la direccion la menu de juegos
+    {path: "usuario/:id/geografia/1/play" , component: JuegoEuroBanderasComponent},  // ruta para la direccion la menu de juegos
 ];

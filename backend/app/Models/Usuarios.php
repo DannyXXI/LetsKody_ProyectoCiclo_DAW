@@ -23,4 +23,9 @@ class Usuarios extends Model
         "created_at" => "datetime",
         "updated_at" => "datetime"
     ];
+
+    // indica que un usuario puede tener una sola puntuacion (relacion 1-N).
+    public function puntuacionBanderasEuropa() {
+        return $this->hasOne(BanderasEuropaPuntuacion::class, 'usuario_id');
+    }
 }

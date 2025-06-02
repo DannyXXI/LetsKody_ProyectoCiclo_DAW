@@ -1,0 +1,260 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class BanderasEuropaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // insertamos los datos ya en la tabla banderas-europa
+        DB::table("banderas-europa")->insert([
+            [
+                "url" => "https://flagcdn.com/w2560/al.webp", 
+                "correct" => "Albania",
+                "opcion1" => "Croacia",
+                "opcion2" => "Portugal",
+                "opcion3" => "Montenegro",
+                "opcion4" => "Albania", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/de.webp", 
+                "correct" => "Alemania",
+                "opcion1" => "Alemania",
+                "opcion2" => "Italia",
+                "opcion3" => "Bélgica",
+                "opcion4" => "Noruega", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/ad.webp", 
+                "correct" => "Andorra",
+                "opcion1" => "Reino Unido",
+                "opcion2" => "Rumania",
+                "opcion3" => "Andorra",
+                "opcion4" => "Suiza", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/at.webp", 
+                "correct" => "Austria",
+                "opcion1" => "Irlanda",
+                "opcion2" => "Mónaco",
+                "opcion3" => "España",
+                "opcion4" => "Austria", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/be.webp", 
+                "correct" => "Bélgica",
+                "opcion1" => "Bélgica",
+                "opcion2" => "Italia",
+                "opcion3" => "Luxemburgo",
+                "opcion4" => "Alemania", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/by.webp", 
+                "correct" => "Bielorrusia",
+                "opcion1" => "Francia",
+                "opcion2" => "Bielorrusia",
+                "opcion3" => "Grecia",
+                "opcion4" => "Bulgaria", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/ba.webp", 
+                "correct" => "Bosnia y Herzegovina",
+                "opcion1" => "Montenegro",
+                "opcion2" => "Bielorrusia",
+                "opcion3" => "Albania",
+                "opcion4" => "Bosnia y Herzegovina", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/bg.webp", 
+                "correct" => "Bulgaria",
+                "opcion1" => "Hungria",
+                "opcion2" => "Polonia",
+                "opcion3" => "Italia",
+                "opcion4" => "Bulgaria", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/cz.webp", 
+                "correct" => "República Checa",
+                "opcion1" => "Luxemburgo",
+                "opcion2" => "República Checa",
+                "opcion3" => "Portugal",
+                "opcion4" => "Países Bajos", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/cy.webp", 
+                "correct" => "Chipre",
+                "opcion1" => "Ciudad del Vaticano",
+                "opcion2" => "Irlanda",
+                "opcion3" => "Chipre",
+                "opcion4" => "Malta", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/va.webp", 
+                "correct" => "Ciudad del Vaticano",
+                "opcion1" => "Chipre",
+                "opcion2" => "España",
+                "opcion3" => "Ciudad del Vaticano",
+                "opcion4" => "Países Bajos", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/hr.webp", 
+                "correct" => "Croacia",
+                "opcion1" => "Serbia",
+                "opcion2" => "Andorra",
+                "opcion3" => "Polonia",
+                "opcion4" => "Croacia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/dk.webp", 
+                "correct" => "Dinamarca",
+                "opcion1" => "Noruega",
+                "opcion2" => "Suecia",
+                "opcion3" => "Dinamarca",
+                "opcion4" => "Suiza", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/si.webp", 
+                "correct" => "Eslovenia",
+                "opcion1" => "Países Bajos",
+                "opcion2" => "Eslovenia",
+                "opcion3" => "Austria",
+                "opcion4" => "Ucrania", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/es.webp", 
+                "correct" => "España",
+                "opcion1" => "Andorra",
+                "opcion2" => "España",
+                "opcion3" => "Italia",
+                "opcion4" => "Rumania", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/ee.webp", 
+                "correct" => "Estonia",
+                "opcion1" => "Noruega",
+                "opcion2" => "Letonia",
+                "opcion3" => "Ciudad del Vaticano",
+                "opcion4" => "Estonia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/fi.webp", 
+                "correct" => "Finlandia",
+                "opcion1" => "Francia",
+                "opcion2" => "Finlandia",
+                "opcion3" => "Serbia",
+                "opcion4" => "Bielorrusia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/fr.webp", 
+                "correct" => "Francia",
+                "opcion1" => "Portugal",
+                "opcion2" => "Luxemburgo",
+                "opcion3" => "Croacia",
+                "opcion4" => "Francia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/gr.webp", 
+                "correct" => "Grecia",
+                "opcion1" => "Grecia",
+                "opcion2" => "Dinamarca",
+                "opcion3" => "Finlandia",
+                "opcion4" => "España", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/hu.webp", 
+                "correct" => "Hungría",
+                "opcion1" => "Bielorrusia",
+                "opcion2" => "Estonia",
+                "opcion3" => "Hungría",
+                "opcion4" => "Portugal", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/ie.webp", 
+                "correct" => "Irlanda",
+                "opcion1" => "Irlanda",
+                "opcion2" => "Hungría",
+                "opcion3" => "España",
+                "opcion4" => "Mónaco", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/is.webp", 
+                "correct" => "Islandia",
+                "opcion1" => "Luxemburgo",
+                "opcion2" => "Islandia",
+                "opcion3" => "Malta",
+                "opcion4" => "Finlandia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/it.webp", 
+                "correct" => "Italia",
+                "opcion1" => "Hungría",
+                "opcion2" => "España",
+                "opcion3" => "Polonia",
+                "opcion4" => "Italia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/lv.webp", 
+                "correct" => "Letonia",
+                "opcion1" => "Albania",
+                "opcion2" => "Letonia",
+                "opcion3" => "Liechtenstein",
+                "opcion4" => "Dinamarca", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/li.webp", 
+                "correct" => "Liechtenstein",
+                "opcion1" => "Luxemburgo",
+                "opcion2" => "Rumania",
+                "opcion3" => "Moldavia",
+                "opcion4" => "Liechtenstein", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/lt.webp", 
+                "correct" => "Lituania",
+                "opcion1" => "Lituania",
+                "opcion2" => "Letonia",
+                "opcion3" => "Portugal",
+                "opcion4" => "Malta", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/lu.webp", 
+                "correct" => "Luxemburgo",
+                "opcion1" => "Francia",
+                "opcion2" => "Polonia",
+                "opcion3" => "Luxemburgo",
+                "opcion4" => "Grecia", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/mk.webp", 
+                "correct" => "Macedonia del Norte",
+                "opcion1" => "Bielorrusia",
+                "opcion2" => "Andorra",
+                "opcion3" => "Macedonia del Norte",
+                "opcion4" => "Mónaco", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/mt.webp", 
+                "correct" => "Malta",
+                "opcion1" => "San Marino",
+                "opcion2" => "Ciudad del Vaticano",
+                "opcion3" => "Italia",
+                "opcion4" => "Malta", 
+            ],
+            [
+                "url" => "https://flagcdn.com/w2560/md.webp", 
+                "correct" => "Moldavia",
+                "opcion1" => "Moldavia",
+                "opcion2" => "Alemania",
+                "opcion3" => "Andorra",
+                "opcion4" => "Malta", 
+            ]
+        ]);
+    }
+}

@@ -1,0 +1,179 @@
+main#contenedor-juego-eurobanderas {
+    display: flex;                   /* flexbox para alinear los elementos internos */
+    flex-direction: column;          /* los elementos hijos se acomodan verticalmente */
+    align-items: center;             /* centrar verticalmente los hijos */
+    justify-content: center;         /* centrar horizontalmente los hijos */
+    background-color: #ddb1ff;     /* color de fondo del componente */
+    padding: 50px;                   /* espaciado del contenedor */
+    font-family: "badcomic";         /* tipo de letra usada */
+    min-height: 100vh;               /* se establece la altura minima correspondiente a la altura del viewport */
+}
+
+main#contenedor-juego-eurobanderas .encabezado-juego {
+    width: 70%;                        /* limita el ancho del contenedor de texto para mantener la legibilidad */
+    display: flex;                     /* flexbox para alinear los elementos internos */
+    justify-content: space-between;    /* para dejar espacio uniforme entre los elementos internos */
+    margin-bottom: 10px;               /* margen inferior */
+    font-size: 1.3rem;                 /* tamaño de la letra usada en el contenedor */
+}
+
+main#contenedor-juego-eurobanderas .encabezado-juego .volver-menu {
+    background-color: yellow;   /* color de fondo del boton de volver */
+    border-radius: 10px;          /* redondeo de los bordes */
+    border: none;                 /* quitamos el borde de los botones */
+    color: black;               /* color de la letra de los botones */
+    cursor: pointer;              /* estilo del cursor cuando el mouse esta sobre el boton */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animacion suave al pasar el mouse sobre el boton */
+}
+
+main#contenedor-juego-eurobanderas .encabezado-juego .volver-menu:hover {
+    background-color: rgb(231, 231, 0);    /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas {
+    width: 70%;                        /* limita el ancho del contenedor de texto para mantener la legibilidad */
+    display: flex;                     /* flexbox para alinear los elementos internos */
+    flex-direction: column;            /* los elementos hijos se acomodan verticalmente */
+    padding: 20px;                     /* espaciado del contenedor */
+    border: 3px solid black;         /* color y grosor del borde */
+    border-radius: 15px;               /* redondeo de los bordes */
+    background-color: #d6eaff;       /* color de fondo del contenedor */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-imagen {
+    display: flex;                 /* limita el ancho del contenedor de texto para mantener la legibilidad */
+    justify-content: center;       /* centrar horizontalmente los hijos */
+    align-items: center;           /* centrar verticalmente los hijos */
+    margin-bottom: 20px;           /* margen inferior */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-imagen img {
+    width: 420px;    /* ancho fijo de la imagen */
+    height: 310px;   /* alto fijo de la imagen */
+    border: 1px solid black; /* color y grosor del borde */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info {
+    display: grid;          /* convierte el contenedor en un sistema de filas y columnas definido por CSS Grid */
+    gap: 10px;              /* separacion entre cada fila y columna */
+    margin-bottom: 15px;    /* margen inferior respecto al boton de pasar */
+    grid-template-columns: 1fr 1fr;   /* divide el contenedor en 2 columnas de igual ancho */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info .btn {
+    background-color: mediumslateblue;   /* color de fondo del boton de volver */
+    border-radius: 10px;                   /* redondeo de los bordes */
+    border: none;                          /* quitamos el borde del boton */
+    color: black;                        /* color de la letra del boton */
+    cursor: pointer;                       /* estilo del cursor cuando el mouse esta sobre el boton */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animacion suave al pasar el mouse sobre el boton */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info .btn:hover {
+    background-color: rgb(143, 127, 234);   /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pasar {
+    width: 100%;                        /* el boton ocupa todo el ancho del contenedor padre */
+    background-color: lightcoral;     /* color de fondo del boton de volver */
+    border-radius: 10px;                /* redondeo de los bordes */
+    border: none;                       /* quitamos el borde del boton */
+    color: black;                     /* color de la letra del boton */
+    cursor: pointer;                    /* estilo del cursor cuando el mouse esta sobre el boton */
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;     /* animacion suave al pasar el mouse sobre el boton */
+}
+
+main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pasar:hover {
+    background-color: rgb(240, 111, 111);   /* color de fondo del boton cuando este el mouse sobre el boton */
+}
+
+#modalAbandonar[open], #modalfinJuego[open]{ 
+    scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
+    transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
+
+    @starting-style {
+        scale: 0;                          /* estado inicial del modal antes de hacerse visible */
+    }
+}
+
+#modalAbandonar, #modalfinJuego {
+    border-radius: 18px;                   /* redondeo de los bordes */
+    text-align: center;                    /* se centra horizontalmente el contenido del modal */
+    font-family: "badcomic";               /* tipo de letra usada en el modal */
+    scale: 0;                              /* estado inicial del modal (se usa con 'transition') */
+    transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
+}
+
+.modalJuego {
+    background-color: rgb(255, 188, 117);   /* color de fondo del modal */
+    border-color: rgb(255, 174, 24);        /* color del borde del modal */
+}
+
+.p-modal {
+    white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
+}
+
+/* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
+@media (width < 992px) {
+    main#contenedor-juego-eurobanderas { 
+        padding: 20px;    /* reducimos el espaciado del contenedor */
+    }
+
+    main#contenedor-juego-eurobanderas .encabezado-juego {
+        width: 100%;           /* ocupamos todo el ancho del contenedor padre */
+        font-size: 1.2rem;     /* reducimos el tamaño de letra */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas {
+        width: 100%;           /* ocupamos todo el ancho del contenedor padre */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-imagen img {
+        width: 340px;        /* ancho fijo de la imagen */
+        height: 250px;       /* alto fijo de la imagen */
+        object-fit: cover;   /* permite que la imagen se escale para encajar dentro del contenedor sin deformarse ni recortarse */
+        display: block;      /* hace que la imagen ocupe toda linea disponible */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info {
+        grid-template-columns: 1fr;      /* divide el contenedor en 1 columna de igual ancho */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pasar {
+        width: 100%;     /* ocupamos todo el ancho del contenedor padre */
+    }
+}
+
+/* cuando el componente home este pantallas ultra grandes (1440p o más) */
+@media (width >= 2560px) and (height >= 1440px) {
+    main#contenedor-juego-eurobanderas .encabezado-juego {
+        font-size: 1.5rem;     /* aumentamos el tamaño de la letra */
+    }
+
+    main#contenedor-juego-eurobanderas .encabezado-juego .volver-menu {
+        font-size: 1.4rem;     /* aumentamos el tamaño de la letra */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas {
+        padding: 35px;                     /* aumentamos el espaciado del contenedor */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-imagen img {
+        width: 540px;     /* aumentamos el ancho fijo de la imagen */
+        height: 410px;    /* aumentamos el alto fijo de la imagen */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info {
+        gap: 15px;        /* aumentamos la separacion entre cada fila y columna */
+    }
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info .btn {
+        font-size: 1.7rem;     /* aumentamos el tamaño de la letra */
+    }
+
+
+    main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pasar {
+        font-size: 1.7rem;     /* aumentamos el tamaño de la letra */
+    }
+}
+

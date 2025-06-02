@@ -15,7 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->validateCsrfTokens(except: [
             "email/*",
             "recaptcha",
-            "usuario/*"
+            "usuario/*",
+            "geografia/*"
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

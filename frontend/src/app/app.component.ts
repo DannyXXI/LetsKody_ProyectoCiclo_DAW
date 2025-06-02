@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GestionUsuariosService } from './servicios/gestion-usuarios/gestion-usuarios.service';
+import { EurobanderasService } from './servicios/juegos/geografia/eurobanderas/eurobanderas.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,7 @@ import { GestionUsuariosService } from './servicios/gestion-usuarios/gestion-usu
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
-  // método constructor del componente (se añade el servicio)
-  constructor(public serviceUsuarios:GestionUsuariosService){}
 
-  // al iniciar la app que obtenga todos nombres e ids de usuarios
-  ngOnInit(){
-    this.serviceUsuarios.obtenerNombresUsuario();
-    this.serviceUsuarios.obtenerIdsUsuario();
-  }
 }

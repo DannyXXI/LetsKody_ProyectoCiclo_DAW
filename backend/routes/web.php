@@ -5,6 +5,7 @@ use App\Http\Controllers\EmailSoporteController;
 use App\Http\Controllers\RecaptchaController;
 use App\Http\Controllers\EmailValidacionController;
 use App\Http\Controllers\GestionUsuariosController;
+use App\Http\Controllers\BanderasEuropeasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,7 @@ Route::post('/usuario/login' , [GestionUsuariosController::class , "verificarCre
 Route::patch('/usuario/modificar' , [GestionUsuariosController::class , "update"]); // ruta para actualizar parcialmente los datos del usuario en la base de datos
 
 Route::post('/email/verificacion-update' , [EmailValidacionController::class , "enviarModificacion"]); // ruta para envio de emails de verificacion
+
+Route::get('/geografia/eurobanderas' , [BanderasEuropeasController::class , "obtenerBanderas"]); // ruta para obtener todos los datos de las banderas
+
+Route::post('/geografia/eurobanderas/puntuacion' , [BanderasEuropeasController::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego de las banderas
