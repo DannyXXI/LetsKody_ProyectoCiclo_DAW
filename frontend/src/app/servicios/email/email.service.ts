@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EmailSoporte } from '../../modelos/email-soporte';
 import { Observable } from 'rxjs';
+import { ConfigService } from '../configuracion/config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,11 @@ import { Observable } from 'rxjs';
 export class EmailService {
 
   public siteKey: string;               // clave pública de Google reCAPTCHA v2
-  private readonly URL_SERVER: string;  // host del servidor de Laravel
   public codigoVerificacion: string;    // variable para el codigo de verificacion de registro/modificacion de usuario
 
-  // método constructor del servicio (se inicializa variables y añadimos metodo HTTPClient)
-  constructor(private http:HttpClient) {
+  // método constructor del servicio (se inicializa variables y añadimos método HTTPClient y servicio de configuración)
+  constructor(private http:HttpClient, private config:ConfigService) {
     this.siteKey = "6LfnSkMrAAAAAPYRh-c_2jBN24o-JTDuzFGtQTmv";
-    this.URL_SERVER = "http://127.0.0.1:8000";
     this.codigoVerificacion = "";
   }
 
@@ -32,18 +31,18 @@ export class EmailService {
     return resultado;  // se devuelve el codigo ya formado
   }
 
-  // metodo POST para mandar el contenido del email al servidor
+  // método POST para que el servidor mande el resguardo de su solicitud en Soporte Técnico al email del usuario
   public mandarEmailSoporte(email:EmailSoporte): Observable<any> {
-    return this.http.post<EmailSoporte>(this.URL_SERVER + "/email/soporte", email);
+    return this.http.post<EmailSoporte>(this.config.hostServer + "/email/soporte", email);
   }
 
-  // metodo POST para mandar al servidor que mande un email de verificación
+  // método POST para que el servidor mande el codigo de verificación al email del usuario para se pueda registrar
   public mandarEmailVerificacion(datos:any): Observable<any> {
-    return this.http.post<any>(this.URL_SERVER + "/email/verificacion", datos);
+    return this.http.post<any>(this.config.hostServer + "/email/verificacion", datos);
   }
 
-  // metodo POST para mandar al servidor que mande un email de verificación para confirmar los datos modificados
+  // método POST para que el servidor mande el codigo de verificación al email del usuario para se puedan guardar sus datos modificados
   public mandarEmailVerificacionUpdate(datos:any): Observable<any> {
-    return this.http.post<any>(this.URL_SERVER + "/email/verificacion-update", datos);
+    return this.http.post<any>(this.config.hostServer + "/email/verificacion-update", datos);
   }
 }
