@@ -12,6 +12,7 @@ import { MenuJuegosComponent } from './paginas/menu-juegos/menu-juegos.component
 import { MenuEuroBanderasComponent } from './paginas/juegos/geografia/menu-euro-banderas/menu-euro-banderas.component';
 import { JuegoEuroBanderasComponent } from './paginas/juegos/geografia/juego-euro-banderas/juego-euro-banderas.component';
 import { MenuNuminario1Component } from './paginas/juegos/matematicas/menu-numinario1/menu-numinario1.component';
+import { JuegoNuminario1Component } from './paginas/juegos/matematicas/juego-numinario1/juego-numinario1.component';
 
 // archivo que se encarga de las rutas entre los componentes del proyecto de Angular
 export const routes: Routes = [
@@ -29,4 +30,5 @@ export const routes: Routes = [
     {path: "usuario/:id/geografia/1" , component: MenuEuroBanderasComponent},        // ruta a la página del menu de EuroBanderas
     {path: "usuario/:id/geografia/1/play" , component: JuegoEuroBanderasComponent},  // ruta a la página del juego EuroBanderas
     {path: "usuario/:id/matematicas/1" , component: MenuNuminario1Component},        // ruta a la página del menu de Numinario I
+    {path: "usuario/:id/matematicas/1/play" , component: JuegoNuminario1Component}   // ruta a la página del juego de Numinario I
 ];

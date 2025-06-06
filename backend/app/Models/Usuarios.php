@@ -24,8 +24,13 @@ class Usuarios extends Model
         "updated_at" => "datetime"
     ];
 
-    // indica que un usuario puede tener una sola puntuacion (relacion 1-N).
+    // indica que un usuario puede tener una sola puntuacion en EuroBanderas (relacion 1-N).
     public function puntuacionBanderasEuropa() {
         return $this->hasOne(BanderasEuropaPuntuacion::class, 'usuario_id');
+    }
+
+    // indica que un usuario puede tener una sola puntuacion en Numinario I (relacion 1-N).
+    public function puntuacionNuminario1() {
+        return $this->hasOne(Numinario1Puntuacion::class, 'usuario_id');
     }
 }

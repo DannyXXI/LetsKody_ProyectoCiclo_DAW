@@ -1,0 +1,92 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-juego-numinario1">
+
+  <!-- encabezado con el tiempo y enlace de volver -->
+  <div class="encabezado-juego">
+    <div class="tiempo"><b>Tiempo: {{ tiempo }}</b></div> <!--time-->
+    <a class="btn volver-menu" (click)="mostrarModalAbandonar()">Volver al menú</a>
+  </div>
+
+  <section class="juego-numinario1">
+
+    <!-- sección que muestra la operación que se debe resolver -->
+    <section class="operacion">
+      <p>{{ operacion }} = ?</p>
+    </section>
+
+    <!-- sección que muestra la tabla interactiva -->
+    <section class="tabla-magica">
+      <div class="table-container">
+        <table>
+        @for (filas of celdas; track $index) {
+          <tr>
+          @for (celda of filas; track $index) {
+            <!--
+              [class.mostrarFondo]="celda.mostrarFondo"  ->  si esa propiedad es true se aplica la clase 'mostrarFondo'
+              [attr.data-x]="celda.x"  ->  añade el atributo personalizado data-x con el valor de la coordenada x de la celda
+              [attr.data-y]="celda.y"  ->  añade el atributo personalizado data-y con el valor de la coordenada y de la celda
+                las coordenadas sirven para identificar la posición de cada celda dentro del juego
+              [style.width.px] / [style.height.px]="sizeCelda"  ->  ajusta dinamicamente el ancho y alto en px de la celda con el valor sizeCelda
+            -->
+            <td 
+              [class.mostrarFondo]="celda.mostrarFondo"
+              [attr.data-x]="celda.x"
+              [attr.data-y]="celda.y"
+              [style.width.px]="sizeCelda"
+              [style.height.px]="sizeCelda"
+            ></td>
+          }
+          </tr>
+        }     
+        </table>
+      </div>
+    </section>
+
+    <!-- sección que muestra el formulario en el que el usuario escribe la respuesta a la operación -->
+    <section class="formulario">
+      <div class="input-group">
+
+        <!-- campo input para que el usuario escriba la respuesta de la operación -->
+        <!-- con ngModel se sincroniza el valor del input con el valor de la variable respuestaUsuario -->
+        <!-- con keyup.enter se puede comprobar tambien el resultado al pulsar la tecla enter -->
+        <input type="number" class="form-control" [(ngModel)]="respuestaUsuario" placeholder="Respuesta..." min="1" (keyup.enter)="comprobarRespuesta()" required/>
+
+        <button type="button" class="btn btn-primary" (click)="comprobarRespuesta()">Comprobar</button> <!-- botón para comprobar la respuesta del usuario -->
+      </div>
+    </section>
+  </section>
+</main>
+
+<!-- modal que muestra los mensajes de error -->
+<dialog id="modalError" class="modalError">
+    <form method="dialog">
+        <p [textContent]="mensajeError" class="p-modal"></p>
+        <button type="submit" class="btn btn-dark">CERRAR</button>
+    </form>
+</dialog>
+
+<!-- modal que muestra un mensaje al usuario si quiere abandonar el juego -->
+<dialog id="modalAbandonar" class="modalJuego">
+    <form method="dialog">
+        <p class="p-modal">¿Quieres abandonar tu progreso en el juego?<br>Volverás al menú del juego.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark">NO</button>
+            <button type="submit" class="btn btn-dark" [routerLink]="'/usuario/' + idParam + '/matematicas/1'">SI</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- modal que muestra un mensaje al usuario con la puntuación del usuario -->
+<dialog id="modalfinJuego" class="modalJuego">
+    <form method="dialog">
+        <h3>🎊 <b>GAME OVER</b> 🎊</h3>
+        <p class="p-modal" style="text-align:justify">Has tardado {{ tiempo }} segundos.</p>
+        <p class="p-modal" style="text-align:justify">Has obtenido {{ puntos }} puntos.</p>
+        <p class="p-modal" style="text-align:justify">El dibujo que has revelado es este:</p>
+        <img src="/img/juegos/numinario1/retrato_kody.png" alt="retrato">
+        <br><br>
+        <div class="d-flex justify-content-center gap-3">
+          <button type="submit" class="btn btn-dark" (click)="guardarActualizarPuntuacion()">Volver al menu</button>
+        </div>
+    </form>
+</dialog>

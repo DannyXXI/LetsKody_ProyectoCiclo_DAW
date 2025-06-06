@@ -57,6 +57,6 @@ class BanderasEuropeasController extends Controller
             ]);
         }
 
-        return response()->json(["mensaje" => "✅​​ Proceso realizo sin problema" . $request->usuario_id . " no existe."]);
+        return response()->json(["mensaje" => "✅​​ Proceso realizado sin problema."]);
     }
 }

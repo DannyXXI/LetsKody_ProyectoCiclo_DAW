@@ -6,6 +6,7 @@ use App\Http\Controllers\RecaptchaController;
 use App\Http\Controllers\EmailValidacionController;
 use App\Http\Controllers\GestionUsuariosController;
 use App\Http\Controllers\BanderasEuropeasController;
+use App\Http\Controllers\Numinario1Controller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,5 @@ Route::post('/email/verificacion-update' , [EmailValidacionController::class , "
 Route::get('/geografia/eurobanderas' , [BanderasEuropeasController::class , "obtenerBanderas"]); // ruta para obtener todos los datos de las banderas
 
 Route::post('/geografia/eurobanderas/puntuacion' , [BanderasEuropeasController::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego de las banderas
+
+Route::post("/matematicas/numinario1/puntuacion", [Numinario1Controller::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego del numinario
