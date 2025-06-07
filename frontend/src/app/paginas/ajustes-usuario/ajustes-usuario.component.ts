@@ -45,14 +45,30 @@ export class AjustesUsuarioComponent implements OnInit {
 
   //metodo para eliminar la cuenta y redireccionar al login
   public eliminarCuenta():void {
-    alert("Función no disponible en esta versión, pongase en contacto con el autor.")
+    this.serviceUsuarios.deleteUsuario(this.idParam).subscribe({
+      next: () => {
+          this.mostrarModalDespedida();
+        },
+        error: (e) => {
+          console.error(e);
+          this.mostrarModalError();
+        }
+    });
   }
 
-    // metodo para mostrar el modal de bloqueo de funciones
-  public mostrarMensajeModal() {
-    const dialog = document.getElementById("modal2") as HTMLDialogElement;  // referencia al modal por su ID
-    this.mensajeModal = "Función no disponible en esta versión, pongase en contacto con el autor.";
-    dialog.className= "modalMensaje";
+  // metodo para mostrar el modal de confirmacion de la eliminacion de los datos
+  public mostrarModalDespedida() {
+    const dialog = document.getElementById("modalDespedida") as HTMLDialogElement;  // referencia al modal por su ID
+    this.mensajeModal = "Su cuenta en Let's Kody ha sido eliminada correctamente.";
+    dialog.className= "modalDespedida";
+    dialog.showModal();
+  }
+
+  // metodo para mostrar el modal de bloqueo de funciones
+  public mostrarModalError() {
+    const dialog = document.getElementById("modalError") as HTMLDialogElement;  // referencia al modal por su ID
+    this.mensajeModal = "Ups, ha ocurrido un error y no se ha podido procesar la solicitud.";
+    dialog.className= "modalError";
     dialog.showModal();
   }
 }

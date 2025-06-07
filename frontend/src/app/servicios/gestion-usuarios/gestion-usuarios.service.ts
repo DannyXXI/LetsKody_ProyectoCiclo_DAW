@@ -66,4 +66,9 @@ export class GestionUsuariosService {
   public actualizarUsuario(updateUsuario:UpdateUsuario): Observable<any> {
     return this.http.patch<any>(this.config.hostServer + "/usuario/modificar", updateUsuario);
   }
+
+  // metodo DELETE para eliminar un usuario por id
+  public deleteUsuario(id:string): Observable<any> {
+    return this.http.delete<any>(this.config.hostServer + "/usuario/eliminar/" + id);
+  }
 }

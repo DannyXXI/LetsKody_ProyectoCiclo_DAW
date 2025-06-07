@@ -38,3 +38,5 @@ Route::post('/geografia/eurobanderas/puntuacion' , [BanderasEuropeasController::
 Route::post("/matematicas/numinario1/puntuacion", [Numinario1Controller::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego del numinario
 
 Route::get("/ranking/usuario/{id}" , [RankingController::class , "obtenerRankingPorUsuario"]); // ruta para obtener las puntuaciones y posicion de un jugador en todos los juegos
+
+Route::delete("/usuario/eliminar/{id}" , [GestionUsuariosController::class , "delete"]); // ruta para obtener las puntuaciones y posicion de un jugador en todos los juegos

@@ -44,7 +44,7 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
     color: black;          /* color de la letra de los botones */
 }
 
-#modal[open],#modal2[open]{ 
+#modal[open], #modalDespedida[open], #modalError[open]{ 
   scale: 1;                            /* se escala el modal a su tamaño normal cuando se hace visible */ 
   transition: scale .3s ease-in-out;   /* animación suave del escalado del modal */
 
@@ -53,7 +53,7 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
   }
 }
 
-#modal,#modal2{
+#modal, #modalDespedida, #modalError{
   border-radius: 18px;                   /* redondeo de los bordes */
   text-align: center;                    /* se centra horizontalmente el contenido del modal */
   font-family: "badcomic";               /* tipo de letra usada en el modal */
@@ -64,6 +64,16 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
 .modalMensaje {
   background-color: rgb(197, 122, 255);   /* color de fondo del modal */
   border-color: rgb(168, 37, 255);        /* color del borde del modal */
+}
+
+.modalDespedida {
+  background-color: rgb(255, 122, 206);   /* color de fondo del modal */
+  border-color: rgb(255, 37, 131);        /* color del borde del modal */
+}
+
+.modalError {
+  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
+  border-color: rgb(255, 37, 37);        /* color del borde del modal */
 }
 
 .p-modal {

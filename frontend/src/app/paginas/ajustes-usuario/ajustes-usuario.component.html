@@ -55,8 +55,20 @@
     </form>
 </dialog>
 
-<!-- modal para indicar al usuario las funciones no disponibles -->
-<dialog id="modal2">
+<!-- modal para indicar al usuario que se ha borrado sus datos -->
+<dialog id="modalDespedida">
+
+    <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
+    <form method="dialog">
+        <p [textContent]="mensajeModal" class="p-modal"></p>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark" [routerLink]="['/login']">Volver al login</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- modal para mensajes de error -->
+<dialog id="modalError">
 
     <!-- formulario para el modal (obligatorio que el metodo sea dialog) -->
     <form method="dialog">

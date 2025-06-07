@@ -113,4 +113,19 @@ class GestionUsuariosController extends Controller
 
         return response()->json(["mensajeCorrecto" => "Usuario actualizado correctamente."], 200);
     }
+
+    // metodo para eliminar la cuenta de un usuario (y sus puntuaciones)
+    public function delete($id) {
+
+        $usuario = Usuarios::find($id);    // obtenemos el usuario por su ID
+
+        // si no existe el usuario que se busca actualizar
+        if (!$usuario) {
+            return response()->json(["mensaje" => "❌ Usuario no encontrado."], 404);
+        }
+
+        $usuario->delete();   // se elimina el usuario (las puntuaciones se borran por cascada)
+
+        return response()->json(['mensaje' => '✅ Usuario y sus puntuaciones eliminados correctamente.'], 200);
+    }
 }
