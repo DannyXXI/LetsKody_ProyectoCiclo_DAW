@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Verifica tu cuenta</title>
     </head>
-    <body style="background-color: #f0f8ff; font-family: 'Comic Sans MS', cursive, sans-serif; padding: 20px; color: #333;">
+    <body style="background-color: #f0f8ff; font-family: 'Comic Sans MS', Arial, cursive, sans-serif; padding: 20px; color: #333;">
         <div style="max-width: 500px; margin: auto; background-color: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
             
             <h1 style="color: #2f61de;">¡Hola pequeñ@ aventurer@!</h1>

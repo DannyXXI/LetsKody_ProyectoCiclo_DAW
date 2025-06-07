@@ -55,8 +55,8 @@ export class SoporteComponent {
       event.preventDefault();
       this.mostrarModal("El formato del email destinatario no es válido.", "modalError");
     }
-    // si el contenido del mensaje sobrepasa los 70 caracteres no se envia el formulario y salta un mensaje de aviso
-    else if(this.contenido.value.trim().length > 70){
+    // si el contenido del mensaje sobrepasa los 80 caracteres no se envia el formulario y salta un mensaje de aviso
+    else if(this.contenido.value.trim().length > 80){
       event.preventDefault();
       this.mostrarModal("El contenido de su solicitud es demasiado larga para ser enviada.", "modalError");
     }
@@ -75,7 +75,7 @@ export class SoporteComponent {
       // realizamos la solicitud HTTP al servidor para tramitar el email de soporte
       this.emailService.mandarEmailSoporte(this.datosEmail).subscribe({
         next: (data) => {
-          this.mostrarModal("La solicitud ha sido mandada correctamente.\nLe llegará un resgaurdo de su solicitud a su email.", "modalCorrect");
+          this.mostrarModal("La solicitud ha sido mandada correctamente.\nLe llegará un resguardo de su solicitud a su email.", "modalCorrect");
           this.formularioSoporte.setValue({destinatario:"" , contenido:""}); // reiniciamos los valores del formulario
           (window as any).grecaptcha.reset(); // reiniciamos el reCAPTCHA
         },

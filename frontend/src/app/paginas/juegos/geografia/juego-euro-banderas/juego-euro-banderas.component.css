@@ -104,11 +104,6 @@ main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pas
     transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
 }
 
-.modalJuego {
-    background-color: rgb(255, 188, 117);   /* color de fondo del modal */
-    border-color: rgb(255, 174, 24);        /* color del borde del modal */
-}
-
 .p-modal {
     white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
 }
@@ -129,10 +124,8 @@ main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .boton-pas
     }
 
     main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-imagen img {
-        width: 340px;        /* ancho fijo de la imagen */
+        width: 300px;        /* ancho fijo de la imagen */
         height: 250px;       /* alto fijo de la imagen */
-        object-fit: cover;   /* permite que la imagen se escale para encajar dentro del contenedor sin deformarse ni recortarse */
-        display: block;      /* hace que la imagen ocupe toda linea disponible */
     }
 
     main#contenedor-juego-eurobanderas .juego-eurobanderas .parte-botones .info {

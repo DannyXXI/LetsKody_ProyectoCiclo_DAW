@@ -152,16 +152,6 @@ main#contenedor-juego-numinario1 .juego-numinario1 .formulario .input-group .btn
   transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
 }
 
-.modalJuego {
-  background-color: rgb(255, 188, 117);   /* color de fondo del modal */
-  border-color: rgb(253, 168, 11);        /* color del borde del modal */
-}
-
-.modalError {
-  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
-  border-color: rgb(255, 37, 37);        /* color del borde del modal */
-}
-
 .p-modal {
   white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
 }

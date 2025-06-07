@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>¡Tu mensaje secreto ha sido recibido! 🧙‍♂️</title>
 </head>
-<body style="background-color: #eaf7ff; font-family: 'Comic Sans MS', cursive, sans-serif; padding: 20px; color: #333;">
+<body style="background-color: #eaf7ff; font-family: 'Comic Sans MS', Arial, cursive, sans-serif; padding: 20px; color: #333;">
     <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
         
         <img src="{{ $message->embed(public_path('img/kody.png')) }}" alt="Kody" style="max-width: 180px">
@@ -13,7 +13,7 @@
         <h3 style="color: #555;">N° de solicitud: <span style="color: #005ea1;">{{ $numSolicitud }}</span></h3>
 
         <p style="font-size: 16px; margin-top: 20px;">
-            Hemos recibido tu mensaje en la torre de soporte técnico. ¡Nuestro equipo de magos y robots lo leera con mucha atención!
+            Hemos recibido tu mensaje en la torre de soporte técnico. ¡Nuestro equipo de magos y robots lo leerá con mucha atención!
         </p>
 
         <p style="font-size: 16px; color: #444; margin: 20px 0;">

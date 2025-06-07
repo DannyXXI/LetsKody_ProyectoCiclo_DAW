@@ -33,6 +33,10 @@ main#contenedor-home .contenedor-texto {
   main#contenedor-home .contenedor-texto {
     text-align: center;           /* se centra el texto horizontalmente para mejor la apariencia en móviles */
   }
+
+  main#contenedor-home .contenedor-texto p {
+    font-size: 1.1rem;            /* se reduce el tamaño de fuente usada */
+  }
 }
 
 /* cuando el componente home este pantallas medianas o grandes (desde 992px hasta 2560px) */

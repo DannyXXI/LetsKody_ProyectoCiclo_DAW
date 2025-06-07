@@ -42,6 +42,33 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
     border-radius: 10px;     /* redondeo de los bordes */
     border: none;            /* quitamos el borde de los botones */
     color: black;          /* color de la letra de los botones */
+    cursor: pointer;         /* estilo del cursor cuando el mouse esta sobre el boton */
+}
+
+/* clases para dar color de fondo a los botones y a sus hover */
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-update {
+    background-color: orange;
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-update:hover {
+    background-color: rgb(255, 185, 55);
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-point {
+    background-color: yellowgreen;
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-point:hover {
+    background-color: rgb(129, 172, 43);
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-delete {
+    background-color: red;
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-delete:hover {
+    background-color: rgb(255, 101, 101);
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-volver {
+    background-color: yellow;
+}
+main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn-volver:hover {
+    background-color: rgb(231, 231, 0);
 }
 
 #modal[open], #modalDespedida[open], #modalError[open]{ 
@@ -59,21 +86,6 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
   font-family: "badcomic";               /* tipo de letra usada en el modal */
   scale: 0;                              /* estado inicial del modal (se usa con 'transition') */
   transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
-}
-
-.modalMensaje {
-  background-color: rgb(197, 122, 255);   /* color de fondo del modal */
-  border-color: rgb(168, 37, 255);        /* color del borde del modal */
-}
-
-.modalDespedida {
-  background-color: rgb(255, 122, 206);   /* color de fondo del modal */
-  border-color: rgb(255, 37, 131);        /* color del borde del modal */
-}
-
-.modalError {
-  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
-  border-color: rgb(255, 37, 37);        /* color del borde del modal */
 }
 
 .p-modal {
@@ -96,7 +108,7 @@ main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {
     }
 
     main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste {
-        width: 59%;         /* aumentamos el ancho del contenedor */
+        width: 90%;         /* aumentamos el ancho del contenedor */
     }
 
     main#contenedor-menu-ajustes .menu-ajustes .parte-inferior .boton-ajuste .btn {

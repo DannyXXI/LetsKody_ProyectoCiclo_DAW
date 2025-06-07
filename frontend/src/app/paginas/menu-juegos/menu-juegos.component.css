@@ -58,7 +58,7 @@ main#contenedor-menu-juegos .menu-juegos .parte-superior button:hover {
     }
 
     main#contenedor-menu-juegos .menu-juegos .parte-superior h2 {
-        font-size: 2.3rem;       /* reducimos el tamaño de la letra */
+        font-size: 2rem;       /* reducimos el tamaño de la letra */
     }
 
     main#contenedor-menu-juegos .menu-juegos .parte-superior button {

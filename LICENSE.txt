@@ -41,6 +41,8 @@ Este software utiliza herramientas, fuentes y recursos de terceros cuyas licenci
 - Curse Casual JVE (uso personal gratuito; uso comercial requiere permiso del autor)
 
 ### Diseños gráficos:
-- Las imágenes, logotipos e ilustraciones han sido diseñados por el autor. No se permite su uso sin autorización.
+- Las imágenes, logotipos e ilustraciones han sido diseñados por el autor, y algunas han sido generadas o completadas con herramientas de inteligencia artificial (IA) de OpenAI (ChatGPT/DALL·E) a partir de conceptos y bocetos originales.
+- Todos los derechos sobre estas imágenes corresponden al autor.
+- No se permite el uso, modificación ni redistribución de estos recursos gráficos sin autorización expresa.
 
 FIN DE LA LICENCIA.

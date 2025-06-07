@@ -14,6 +14,32 @@
 }
 
 html, body {
-  height: 100%;
-  margin: 0;
+  height: 100%;  /* el documento raíz y el body ocupan el toda la ventana del viewport */
+  margin: 0;     /* se elimina el margen por defecto del navegador */
+}
+
+/* clases para personalizar los modales según su función */
+.modalError {
+  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
+  border-color: rgb(255, 37, 37);        /* color del borde del modal */
+}
+
+.modalCorrect {
+  background-color: rgb(126, 255, 122);  /* color de fondo del modal */
+  border-color: rgb(33, 189, 27);        /* color del borde del modal */
+}
+
+.modalInfo, .modalMensaje {
+  background-color: rgb(197, 122, 255);   /* color de fondo del modal */
+  border-color: rgb(168, 37, 255);        /* color del borde del modal */
+}
+
+.modalJuego {
+  background-color: rgb(255, 188, 117);   /* color de fondo del modal */
+  border-color: rgb(255, 174, 24);        /* color del borde del modal */
+}
+
+.modalDespedida {
+  background-color: rgb(255, 122, 206);   /* color de fondo del modal */
+  border-color: rgb(255, 37, 131);        /* color del borde del modal */
 }

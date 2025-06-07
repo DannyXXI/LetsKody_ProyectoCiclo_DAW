@@ -9,34 +9,47 @@ use App\Http\Controllers\BanderasEuropeasController;
 use App\Http\Controllers\Numinario1Controller;
 use App\Http\Controllers\RankingController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ruta para la página de inicio
+Route::get('/', function () { return view('welcome'); });
 
-Route::post('/email/soporte' , [EmailSoporteController::class , "crear"]); // ruta para envio de emails de soporte
+// ruta para envio de emails de soporte
+Route::post('/email/soporte' , [EmailSoporteController::class , "crear"]); 
 
-Route::post('/recaptcha', [RecaptchaController::class , "verificar"]); // ruta para tratar la verificiación del reCAPTCHA
+// ruta para envio de emails de verificación
+Route::post('/email/verificacion' , [EmailValidacionController::class , "enviarRegistro"]);
 
-Route::post('/email/verificacion' , [EmailValidacionController::class , "enviarRegistro"]); // ruta para envio de emails de verificacion
+// ruta para envio de emails de verificacion
+Route::post('/email/verificacion-update' , [EmailValidacionController::class , "enviarModificacion"]); 
 
-Route::post('/usuario/crear' , [GestionUsuariosController::class , "add"]); // ruta para añadir un usuario a la base de datos
+// ruta para tratar la verificiación del reCAPTCHA
+Route::post('/recaptcha', [RecaptchaController::class , "verificar"]); 
 
-Route::get('/usuario/nombres' , [GestionUsuariosController::class , "obtenerNombresUsuarios"]); // ruta para obtener todos los nombres de usuarios
+// ruta para añadir un usuario a la base de datos
+Route::post('/usuario/crear' , [GestionUsuariosController::class , "add"]); 
 
-Route::get('/usuario/ids' , [GestionUsuariosController::class , "obtenerIdsUsuarios"]); // ruta para obtener todos los ids de los usuarios
+// ruta para obtener todos los nombres de usuarios
+Route::get('/usuario/nombres' , [GestionUsuariosController::class , "obtenerNombresUsuarios"]); 
 
-Route::post('/usuario/login' , [GestionUsuariosController::class , "verificarCredenciales"]); // ruta para comprobar las credenciales para hacer login
+// ruta para obtener todos los ids de los usuarios
+Route::get('/usuario/ids' , [GestionUsuariosController::class , "obtenerIdsUsuarios"]); 
 
-Route::patch('/usuario/modificar' , [GestionUsuariosController::class , "update"]); // ruta para actualizar parcialmente los datos del usuario en la base de datos
+// ruta para comprobar las credenciales para hacer login
+Route::post('/usuario/login' , [GestionUsuariosController::class , "verificarCredenciales"]); 
 
-Route::post('/email/verificacion-update' , [EmailValidacionController::class , "enviarModificacion"]); // ruta para envio de emails de verificacion
+// ruta para actualizar parcialmente los datos del usuario en la base de datos
+Route::patch('/usuario/modificar' , [GestionUsuariosController::class , "update"]); 
 
-Route::get('/geografia/eurobanderas' , [BanderasEuropeasController::class , "obtenerBanderas"]); // ruta para obtener todos los datos de las banderas
+// ruta para eliminar un usuario por su id
+Route::delete("/usuario/eliminar/{id}" , [GestionUsuariosController::class , "delete"]); 
 
-Route::post('/geografia/eurobanderas/puntuacion' , [BanderasEuropeasController::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego de las banderas
+// ruta para obtener todos los datos de las banderas
+Route::get('/geografia/eurobanderas' , [BanderasEuropeasController::class , "obtenerBanderas"]); 
 
-Route::post("/matematicas/numinario1/puntuacion", [Numinario1Controller::class , "guardarPuntuacion"]); // ruta para guardar/modificar la puntuacion del usuario en el juego del numinario
+// ruta para guardar/modificar la puntuacion del usuario en el juego de las banderas
+Route::post('/geografia/eurobanderas/puntuacion' , [BanderasEuropeasController::class , "guardarPuntuacion"]); 
 
-Route::get("/ranking/usuario/{id}" , [RankingController::class , "obtenerRankingPorUsuario"]); // ruta para obtener las puntuaciones y posicion de un jugador en todos los juegos
+// ruta para guardar/modificar la puntuacion del usuario en el juego del numinario
+Route::post("/matematicas/numinario1/puntuacion", [Numinario1Controller::class , "guardarPuntuacion"]);
 
-Route::delete("/usuario/eliminar/{id}" , [GestionUsuariosController::class , "delete"]); // ruta para obtener las puntuaciones y posicion de un jugador en todos los juegos
+// ruta para obtener las puntuaciones y posiciones de un jugador en todos los juegos
+Route::get("/ranking/usuario/{id}" , [RankingController::class , "obtenerRankingPorUsuario"]);

@@ -86,13 +86,13 @@ main#contenedor-menu-eurobanderas .menu-eurobanderas .parte-inferior .btn-succes
     }
 
     main#contenedor-menu-eurobanderas .menu-eurobanderas .parte-superior h2 {
-        font-size: 2.8rem;         /* reducimos el tamaño de la letra */
-        margin-bottom: 10px;     /* añadimos un margen inferior */
+        font-size: 2.3rem;         /* reducimos el tamaño de la letra */
+        margin-bottom: 10px;       /* añadimos un margen inferior */
     }
 
     main#contenedor-menu-eurobanderas .menu-eurobanderas .parte-media .info{
         text-align: justify;    /* se alinea el texto de manera justificada */
-        font-size: 1rem;     /* tamaño de la letra de la informacion */
+        font-size: 1rem;        /* tamaño de la letra de la informacion */
     }
 
     main#contenedor-menu-eurobanderas .menu-eurobanderas .parte-inferior {

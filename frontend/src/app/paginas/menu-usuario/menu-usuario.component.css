@@ -93,11 +93,6 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias im
   transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
 }
 
-.modalMensaje {
-  background-color: rgb(197, 122, 255);   /* color de fondo del modal */
-  border-color: rgb(168, 37, 255);        /* color del borde del modal */
-}
-
 .p-modal {
   white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
 }
@@ -128,8 +123,8 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias .q
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-superior h2 {
-    font-size: 1.7rem;         /* reducimos el tamaño de la letra */
-    padding-bottom: 5px;     /* añadimos un margen inferior */
+    font-size: 1.5rem;         /* reducimos el tamaño de la letra */
+    padding-bottom: 5px;       /* añadimos un margen inferior */
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-superior .botones {
@@ -137,7 +132,7 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias .q
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-superior .botones .btn {
-    font-size: 1.3rem;     /* reducimos el tamaño de la letra */
+    font-size: 1.2rem;     /* reducimos el tamaño de la letra */
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-inferior {
@@ -145,7 +140,7 @@ main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias .q
   }
 
   main#contenedor-menu-usuario .menu-usuario .parte-inferior #carrusel-materias h5 {
-    font-size: 2.4rem;      /* reducimos el tamaño de la letra */
+    font-size: 2rem;        /* reducimos el tamaño de la letra */
     letter-spacing: 1px;    /* reducimos el espaciado entre cada letra del titulo */
   }
 

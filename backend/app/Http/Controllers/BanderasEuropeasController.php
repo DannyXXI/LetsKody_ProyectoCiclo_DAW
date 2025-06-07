@@ -31,8 +31,6 @@ class BanderasEuropeasController extends Controller
         $puntuacionExistente = $usuario->puntuacionBanderasEuropa()->first();;
         $nuevaPuntuacion = (int) $request->puntos;
 
-
-
         if ($puntuacionExistente){
             // si existe una puntuacion y la nueva es mejor, se actualiza
             if ($nuevaPuntuacion > $puntuacionExistente->puntos) {

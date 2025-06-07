@@ -83,16 +83,6 @@ main#contenedor-login .contenedor-formulario .btn:hover {
   transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
 }
 
-.modalError {
-  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
-  border-color: rgb(255, 37, 37);        /* color del borde del modal */
-}
-
-.modalCorrect {
-  background-color: rgb(126, 255, 122);  /* color de fondo del modal */
-  border-color: rgb(33, 189, 27);        /* color del borde del modal */
-}
-
 .p-modal {
   white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
 }
@@ -100,11 +90,15 @@ main#contenedor-login .contenedor-formulario .btn:hover {
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
 @media (width < 992px) {
   main#contenedor-login .contenedor-formulario {
-    width: 90%;           /* el contenedor del formulario ocupa el 90% del ancho de su contenedor padre */
+    width: 100%;           /* el contenedor del formulario ocupa el 90% del ancho de su contenedor padre */
   }
 
   main#contenedor-login .contenedor-formulario h3 {
-    font-size: auto;      /* tamaño de la letra del titulo se ajusta automaticamente segun el ancho disponible */
+    font-size: 1.7rem;      /* se reduce el tamaño de la letra del titulo */
+  }
+
+  main#contenedor-login .contenedor-formulario .enlace-ingreso {
+    font-size: 0.9rem;      /* se reduce el tamaño del texto del ingreso */
   }
 }
 

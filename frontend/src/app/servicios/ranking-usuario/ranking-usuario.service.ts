@@ -18,7 +18,6 @@ export class RankingUsuarioService {
   public obtenerPuntuacionUsuario(id:string) {
     this.http.get<any>(this.config.hostServer + "/ranking/usuario/" + id).subscribe({
       next: (data) => {
-        console.log(data);
         this.puntuacionUsuario = data;
       },
       error: (e) => {

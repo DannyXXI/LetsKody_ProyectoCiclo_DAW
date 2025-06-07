@@ -34,8 +34,12 @@
 
 /* cuando la pantalla tenga un ancho inferior a 992px (el navbar esta colapsado) */
 @media (width < 992px) {
+    .navbar { 
+        font-size: 15pt;        /* se reduce el tamaño de la letra en el navbar */
+    }
+
     #titulo {
-        width: 55%;  /* ancho de la imagen con el id 'titulo' */
+        width: 60%;     /* ancho de la imagen con el id 'titulo' */
     }
 }
 

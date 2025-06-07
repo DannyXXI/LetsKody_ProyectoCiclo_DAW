@@ -72,7 +72,7 @@ export class JuegoNuminario1Component implements OnInit, OnDestroy {
   private iniciarJuego():void {
     this.setCssVariables();
     this.generarCeldas();
-    this.generarNuevaOperacion(30, 1);
+    this.generarNuevaOperacion(20, 1);
   }
 
   // método que asigna los valores de las variables del TypeScript a las variables CSS para usarlas en los estilos
@@ -132,7 +132,7 @@ export class JuegoNuminario1Component implements OnInit, OnDestroy {
     if (respuesta === respuestaCorrecta) {
       this.mostrarCeldaAleatoria();
       this.respuestaUsuario = "";
-      this.generarNuevaOperacion(30, 1);
+      this.generarNuevaOperacion(20, 1);
     }
     else {
       this.mostrarModalError("¡Respuesta incorrecta!\nInténtalo con otro número.")

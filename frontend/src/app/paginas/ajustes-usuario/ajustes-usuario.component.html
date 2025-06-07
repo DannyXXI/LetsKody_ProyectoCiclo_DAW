@@ -13,28 +13,28 @@
 
             <!-- boton para modificiar ciertos datos personales del usuario -->
             <div class="boton-ajuste">
-                <button class="btn btn-warning" [routerLink]="['/usuario', idParam, 'ajustes', 'modificar']">
+                <button class="btn btn-update" [routerLink]="['/usuario', idParam, 'ajustes', 'modificar']">
                     <i class="fas fa-user-edit"></i>&nbsp;Modificar datos
                 </button>
             </div>
             
             <!-- boton para ver los resultados del usuario en cada juego -->
             <div class="boton-ajuste">
-                <button class="btn btn-info" [routerLink]="['/usuario', idParam, 'ajustes', 'puntuaciones']">
+                <button class="btn btn-point" [routerLink]="['/usuario', idParam, 'ajustes', 'puntuaciones']">
                     <i class="fa-solid fa-award"></i>&nbsp;Puntuaciones
                 </button>
             </div>
 
             <!-- boton para eliminar la cuenta del usuario -->
             <div class="boton-ajuste">
-                <button class="btn btn-danger" (click)="mostrarModal('¿Quieres eliminar tu cuenta en Let\'s Kody?', 'modalMensaje')">
+                <button class="btn btn-delete" (click)="mostrarModal('¿Quieres eliminar tu cuenta en Let\'s Kody?', 'modalMensaje')">
                     <i class="fas fa-user-times"></i>&nbsp;Eliminar cuenta
                 </button>
             </div>
 
             <!-- boton para volver al menú del usuario -->
             <div class="boton-ajuste">
-                <button class="btn btn-secondary" [routerLink]="['/usuario', idParam, 'menu']">
+                <button class="btn btn-volver" [routerLink]="['/usuario', idParam, 'menu']">
                     <i class="fas fa-arrow-left"></i>&nbsp;Volver al menú
                 </button>
             </div>

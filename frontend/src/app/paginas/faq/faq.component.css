@@ -94,6 +94,10 @@ main#contenedor-faq details p {
 
 /* cuando la pantalla tenga un ancho inferior a 992px (pantallas pequeñas) */
 @media (width < 992px) {
+    main#contenedor-faq details summary {
+        font-size: 0.9rem;      /* se reduce el tamaño de fuente del summary */
+    }
+
     main#contenedor-faq details .informacion table{
         width: auto;               /* establece el ancho de la tabla a automatico en moviles */
     }

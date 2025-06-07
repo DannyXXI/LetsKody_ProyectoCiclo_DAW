@@ -2,7 +2,7 @@
 
 **Let’s Kody** es una aplicación web educativa interactiva orientada a estudiantes de Educación Primaria y Secundaria. A través de juegos temáticos, promueve el aprendizaje de diversas materias escolares de forma lúdica y motivadora.
 
-Este proyecto ha sido desarrollado como **Trabajo de Fin de Ciclo** del **Grado Superior en Desarrollo de Aplicaciones Web (DAW)** en el **IES Galileo**.
+Este proyecto ha sido desarrollado como **Trabajo de Fin de Ciclo** del **Grado Superior en Desarrollo de Aplicaciones Web (DAW)** en el **IES Galileo** de Valladolid.
 
 ## 🧩 Funcionalidades principales
 
@@ -14,10 +14,10 @@ Este proyecto ha sido desarrollado como **Trabajo de Fin de Ciclo** del **Grado 
 
 ## 🚀 Tecnologías utilizadas
 
-- **Frontend**: Angular, Bootstrap
-- **Backend**: Laravel, PHP
-- **Dependencias**: Node.js, npm, Composer
-- **Otros recursos**: Google reCAPTCHA, FontAwesome
+- **Frontend**: Angular 19, Bootstrap.
+- **Backend**: Laravel 12, PHP.
+- **Dependencias**: Node.js, npm, Composer.
+- **Otros recursos**: Google reCAPTCHA, FontAwesome.
 
 ## 📷 Recursos gráficos y fuentes
 

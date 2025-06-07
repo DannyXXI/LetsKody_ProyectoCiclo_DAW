@@ -96,7 +96,7 @@ main#contenedor-soporte .contenedor-formulario .btn:hover {
 }
 
 main#contenedor-soporte .contenedor-contacto .informacion {
-  font-size: 1.2rem;     /* tamaño de letra para el boton */
+  font-size: 1.2rem;     /* tamaño de letra de la informacion de contacto telefónico */
 }
 
 .contenedor-contacto img {
@@ -124,16 +124,6 @@ main#contenedor-soporte .contenedor-contacto .informacion {
   transition: scale .3s ease, display .3s ease allow-discrete;    /* animación suave del escalado del modal para cerrarlo (solo en Chrome) */
 }
 
-.modalError {
-  background-color: rgb(255, 122, 122);  /* color de fondo del modal */
-  border-color: rgb(255, 37, 37);        /* color del borde del modal */
-}
-
-.modalCorrect {
-  background-color: rgb(126, 255, 122);  /* color de fondo del modal */
-  border-color: rgb(33, 189, 27);        /* color del borde del modal */
-}
-
 .p-modal {
   white-space: pre-line;      /* se interprete los saltos de linea dentro del parrafo del modal */
 }
@@ -150,7 +140,11 @@ main#contenedor-soporte .contenedor-contacto .informacion {
   }
 
   main#contenedor-soporte .contenedor-formulario h3, main#contenedor-soporte .contenedor-contacto h3 {
-    font-size: 1.6rem;   /* se ajusta el tamaño de letra del titulo */
+    font-size: 1.3rem;   /* se ajusta el tamaño de letra del titulo */
+  }
+
+  main#contenedor-soporte .contenedor-contacto .informacion {
+    font-size: 1rem;     /* se ajusta el tamaño de letra de la informacion */
   }
 
   .contenedor-contacto img {
