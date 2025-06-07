@@ -1,0 +1,58 @@
+<!-- contenedor principal para el contenido del componente -->
+<main id="contenedor-puntuaciones">
+
+    <section class="puntuaciones">
+
+        <!-- sección de la parte superior (titulo y boton de regreso) -->
+        <section class="parte-superior">
+            <h2>Puntuaciones</h2>
+            <button class="btn btn-volver" [routerLink]="['/usuario', idParam, 'ajustes']">
+                <i class="fas fa-arrow-left"></i>&nbsp;Volver al menú
+            </button>
+        </section>
+
+        <!-- sección de la parte inferior (tablas con las puntuaciones) -->
+        <section class="parte-inferior">
+
+        <!-- si el usuario no tiene puntuaciones registradas -->
+        @if (this.serviceRanking.puntuacionUsuario.hayPuntuacion == false) {
+
+            <div class="info">
+                <div class="sin-puntos">
+                    <p>¡Oh no 😱​! Todavía no tienes ninguna puntuación registrada con tu usuario.</p>
+                    <p>
+                        Te animamos a que pruebes algunos de nuestros divertidos juegos y luego vuelvas para 
+                        saber en que puesto te encuentras en el ranking 😉.
+                    </p>
+                </div>
+            </div>
+        }
+        <!-- si el usuario no tiene puntuaciones registradas -->
+        @else {
+            @for (item of this.serviceRanking.puntuacionUsuario.puntuaciones; track $index) {
+            <div class="info">
+                <table class="table table-striped text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <th colspan="3">{{item.nombre}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="puesto"><b>Puesto</b></td>
+                            <td class="puntos"><b>Puntos</b></td>
+                            <td class="tiempo"><b>Tiempo</b></td>
+                        </tr>
+                        <tr>
+                            <td class="puesto">{{item.puesto}}</td>
+                            <td class="puntos">{{item.puntos}}</td>
+                            <td class="tiempo">{{formatoTiempo(item.tiempo)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            }
+        }   
+        </section>
+    </section>
+</main>

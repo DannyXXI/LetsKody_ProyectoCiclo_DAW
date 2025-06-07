@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GestionUsuariosService } from '../../servicios/gestion-usuarios/gestion-usuarios.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { RankingUsuarioService } from '../../servicios/ranking-usuario/ranking-usuario.service';
 
 @Component({
   selector: 'app-ajustes-usuario',
@@ -14,13 +15,14 @@ export class AjustesUsuarioComponent implements OnInit {
   public mensajeModal: string;       // variable para el mensaje del modal
 
   // método constructor del componente (se inicializa variables, añadimos servicios y enrutadores)
-  constructor(public serviceUsuarios:GestionUsuariosService, public router:Router, public activeRoute:ActivatedRoute) {
+  constructor(public serviceUsuarios:GestionUsuariosService, public serviceRanking:RankingUsuarioService, public router:Router, public activeRoute:ActivatedRoute) {
     this.idParam = (activeRoute.snapshot.params["id"] == undefined) ? "" : activeRoute.snapshot.params["id"];
     this.mensajeModal = "";
   }
 
   ngOnInit(){
     this.cargarDatosUsuario(this.idParam); // comprobar al inicio si el parametro del id del usuario es válido
+    this.serviceRanking.obtenerPuntuacionUsuario(this.idParam);  // obtenemos las puntuaciones del usuario
   }
 
   // funcion para cargar los datos del usuario
@@ -32,7 +34,6 @@ export class AjustesUsuarioComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
-
 
   // metodo para mostrar el modal
   public mostrarModal(mensaje:string, nombreClase:string):void {

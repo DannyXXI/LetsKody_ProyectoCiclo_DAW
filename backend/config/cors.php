@@ -2,7 +2,7 @@
     // archivo para habilitar las CORS en Laravel (se crea manualmente)
 
     return [
-        'paths' => ["email/*", "recaptcha", "usuario/*", "geografia/*", "matematicas/*"], // rutas que quieres habilitar el CORS
+        'paths' => ["email/*", "recaptcha", "usuario/*", "geografia/*", "matematicas/*", "ranking/usuario/*"], // rutas que quieres habilitar el CORS
         'allowed_methods' => ['*'], // permitir todos los métodos
         'allowed_origins' => ['*'], // permitir solicitudes de cualquier origen
         'allowed_origins_patterns' => [],

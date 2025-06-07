@@ -17,7 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
             "recaptcha",
             "usuario/*",
             "geografia/*",
-            "matematicas/*"
+            "matematicas/*",
+            "ranking/usuario/*"
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

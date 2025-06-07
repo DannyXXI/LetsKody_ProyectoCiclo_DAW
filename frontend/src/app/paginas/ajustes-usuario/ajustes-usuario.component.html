@@ -20,7 +20,7 @@
             
             <!-- boton para ver los resultados del usuario en cada juego -->
             <div class="boton-ajuste">
-                <button class="btn btn-info" (click)="mostrarMensajeModal()">
+                <button class="btn btn-info" [routerLink]="['/usuario', idParam, 'ajustes', 'puntuaciones']">
                     <i class="fa-solid fa-award"></i>&nbsp;Puntuaciones
                 </button>
             </div>
