@@ -26,7 +26,7 @@ main#contenedor-soporte .contenedor-contacto {
   padding: 10px;                          /* espaciado de 10px del contenedor */
   border: 2px solid black;              /* color y grosor del borde */
   border-radius: 15px;                    /* redondeo de los bordes */
-  background-color: lightgreen;         /* color de fondo del contenedor de contacto */
+  background-color:rgb(237, 213, 175);         /* color de fondo del contenedor de contacto */
   display: flex;                          /* flexbox para alinear los elementos internos */
   flex-direction: column;                 /* los elementos hijos se acomodan verticalmente */
   justify-content: space-between;         /* para dejar espacio entre texto y la imagen */

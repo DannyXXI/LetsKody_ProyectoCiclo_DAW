@@ -48,7 +48,7 @@ export class JuegoEuroBanderasComponent implements OnInit, OnDestroy {
     this.datosPuntuacion = {usuario_id:0, aciertos:0, fallos:0, preguntas_saltadas:0, puntos:0, tiempo:0};
     this.preguntasDisponibles = [];
     this.ronda = 0;
-    this.maxRondas = 10;
+    this.maxRondas = 12;
   }
 
   // se inicializa el juego al entrar al componente

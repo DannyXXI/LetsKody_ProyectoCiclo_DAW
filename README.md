@@ -30,7 +30,7 @@ Este proyecto ha sido desarrollado como **Trabajo de Fin de Ciclo** del **Grado 
 
 Este proyecto está protegido por derechos de autor. Su uso está permitido con fines educativos y no comerciales. No se permite su modificación ni redistribución sin el consentimiento expreso del autor.
 
-Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+Consulta el archivo [LICENSE](./LICENSE.txt) para más detalles.
 
 ## 📬 Contacto
 

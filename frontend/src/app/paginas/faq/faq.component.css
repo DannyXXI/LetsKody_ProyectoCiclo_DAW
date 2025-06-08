@@ -39,8 +39,8 @@ main#contenedor-faq details .informacion {
 }
 
 main#contenedor-faq details .informacion ol, main#contenedor-faq details .informacion ul{
-    margin-left: 20px;     /* margen izquierdo de 20px */
-    padding-left: 20px;    /* espaciado de 20px al lado izquierdo */
+    margin-left: 15px;     /* margen izquierdo de 20px */
+    padding-left: 15px;    /* espaciado de 20px al lado izquierdo */
 }
 
 main#contenedor-faq details .informacion ol li span{
@@ -96,6 +96,10 @@ main#contenedor-faq details p {
 @media (width < 992px) {
     main#contenedor-faq details summary {
         font-size: 0.9rem;      /* se reduce el tamaño de fuente del summary */
+    }
+
+    main#contenedor-faq details .informacion ol li span{
+        font-size: 0.91rem;      /* se reduce el tamaño de fuente del span */
     }
 
     main#contenedor-faq details .informacion table{

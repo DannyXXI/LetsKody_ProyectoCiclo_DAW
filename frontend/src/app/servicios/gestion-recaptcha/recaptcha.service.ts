@@ -12,7 +12,7 @@ export class RecaptchaService {
 
   // método constructor del servicio (se inicializa variables y añadimos método HTTPClient y servicio de configuración)
   constructor(private http:HttpClient, private config:ConfigService) {
-    this.siteKey = "6LfnSkMrAAAAAPYRh-c_2jBN24o-JTDuzFGtQTmv";
+    this.siteKey = this.config.publicKey;
   }
 
   // método POST para mandar el token del reCAPTCHA al servidor para validar al usuario
