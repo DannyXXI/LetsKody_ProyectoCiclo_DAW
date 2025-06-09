@@ -75,7 +75,7 @@ export class SoporteComponent {
       // realizamos la solicitud HTTP al servidor para tramitar el email de soporte
       this.emailService.mandarEmailSoporte(this.datosEmail).subscribe({
         next: (data) => {
-          this.mostrarModal("La solicitud ha sido mandada correctamente.\nLe llegará un resguardo de su solicitud a su email.", "modalCorrect");
+          this.mostrarModal("La solicitud ha sido enviada correctamente.\nLe llegará un resguardo de su solicitud a su email.", "modalCorrect");
           this.formularioSoporte.setValue({destinatario:"" , contenido:""}); // reiniciamos los valores del formulario
           (window as any).grecaptcha.reset(); // reiniciamos el reCAPTCHA
         },

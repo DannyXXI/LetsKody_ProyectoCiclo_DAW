@@ -16,7 +16,7 @@ No se permite:
 - La redistribución de versiones modificadas o derivadas.
 - El uso comercial sin autorización previa.
 
-Para solicitar permisos especiales de uso o adaptación, contacte con el autor a través del siguiente correo electrónico: [daniel.reqexp@gmail.com].
+Para solicitar permisos especiales de uso o adaptación, contacte con el autor a través del siguiente correo electrónico: daniel.reqexp@gmail.com.
 
 ## DESCARGO DE RESPONSABILIDAD:
 

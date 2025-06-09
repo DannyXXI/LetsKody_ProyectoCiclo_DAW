@@ -35,5 +35,5 @@ Consulta el archivo [LICENSE](./LICENSE.txt) para más detalles.
 ## 📬 Contacto
 
 **Daniel Requejo Expósito**  
-📧 [daniel.reqexp@gmail.com]  
+📧 daniel.reqexp@gmail.com  
 🎓 IES Galileo – Desarrollo de Aplicaciones Web

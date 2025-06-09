@@ -6,7 +6,6 @@ export interface Celda {
 }
 
 
-
 // interfaz para las coordenadas de las celdas ocultas
 export interface CeldaOculta {
     x: number;
